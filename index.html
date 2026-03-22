@@ -3,76 +3,217 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>OpenLight Studio</title>
+        <title>OpenLight Studio — 创造光，照亮未来</title>
+        <meta
+            name="description"
+            content="OpenLight Studio 是一个开源创新工作室，专注于编程语言、系统工具与下一代开发者体验。"
+        />
         <style>
-            body {
-                font-family: Arial, sans-serif;
+            /* ===== 全局重置 & 变量 ===== */
+            :root {
+                --bg: #ffffff;
+                --fg: #111111;
+                --muted: #777777;
+                --accent: #007aff;
+                --card-bg: #f8f8f8;
+                --border: #e0e0e0;
+                color-scheme: light dark;
+            }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --bg: #000000;
+                    --fg: #f0f0f0;
+                    --muted: #aaaaaa;
+                    --card-bg: #121212;
+                    --border: #333333;
+                }
+            }
+            * {
                 margin: 0;
                 padding: 0;
-                background-color: #f4f4f9;
-                color: #333;
+                box-sizing: border-box;
             }
-            header {
-                background-color: #2c3e50;
-                color: white;
-                padding: 10px 0;
-                text-align: center;
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+                    Arial, sans-serif;
+                background-color: var(--bg);
+                color: var(--fg);
+                line-height: 1.6;
+                overflow-x: hidden;
+            }
+            a {
+                color: var(--accent);
+                text-decoration: none;
             }
             .container {
-                width: 80%;
-                margin: auto;
-                overflow: hidden;
+                width: min(90%, 1200px);
+                margin: 0 auto;
+                padding: 0 20px;
             }
-            .content {
-                padding: 20px;
-                background-color: white;
-                margin-top: 20px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            /* ===== 布局 ===== */
+            header {
+                padding: 2rem 0;
+                border-bottom: 1px solid var(--border);
             }
-            button {
-                background-color: #27ae60;
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .logo {
+                font-size: 1.5rem;
+                font-weight: 700;
+                letter-spacing: -0.5px;
+            }
+            .nav-links {
+                display: flex;
+                gap: 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            main {
+                padding: 4rem 0;
+            }
+            .hero {
+                text-align: center;
+                max-width: 800px;
+                margin: 0 auto 4rem;
+            }
+            .hero h1 {
+                font-size: clamp(2.5rem, 8vw, 4rem);
+                font-weight: 800;
+                margin-bottom: 1rem;
+                background: linear-gradient(135deg, var(--fg), var(--accent));
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+            .hero p {
+                font-size: 1.2rem;
+                color: var(--muted);
+                margin-bottom: 2rem;
+            }
+            .cta-button {
+                display: inline-block;
+                background: var(--accent);
                 color: white;
-                border: none;
-                padding: 10px 20px;
-                cursor: pointer;
-                border-radius: 5px;
+                padding: 0.8rem 2rem;
+                border-radius: 30px;
+                font-weight: 600;
+                transition: opacity 0.2s;
             }
-            button:hover {
-                background-color: #2ecc71;
+            .cta-button:hover {
+                opacity: 0.9;
+            }
+
+            .features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin-top: 3rem;
+            }
+            .feature-card {
+                background: var(--card-bg);
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                padding: 2rem;
+                transition: transform 0.3s;
+            }
+            .feature-card:hover {
+                transform: translateY(-4px);
+            }
+            .feature-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 1rem;
+            }
+            .feature-card p {
+                color: var(--muted);
+            }
+
+            footer {
+                padding: 3rem 0;
+                text-align: center;
+                color: var(--muted);
+                font-size: 0.9rem;
+                border-top: 1px solid var(--border);
+            }
+
+            /* ===== 响应式 ===== */
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                }
+                .hero h1 {
+                    font-size: 2.5rem;
+                }
             }
         </style>
     </head>
     <body>
         <header>
-            <h1>欢迎来到 OpenLight Studio</h1>
+            <div class="container">
+                <nav>
+                    <div class="logo">OpenLight Studio</div>
+                    <div class="nav-links">
+                        <a href="#projects">项目</a>
+                        <a href="#about">关于</a>
+                        <a href="https://github.com/OpenLight-Studio">GitHub</a>
+                    </div>
+                </nav>
+            </div>
         </header>
 
-        <div class="container">
-            <div class="content">
-                <h2>关于我们</h2>
+        <main class="container">
+            <section class="hero">
+                <h1>创造光，照亮未来</h1>
                 <p>
-                    我们是专注于创意和技术的工作室，致力于为客户提供高质量的产品和服务。
+                    我们是一个开源创新工作室，致力于构建下一代编程语言、系统工具与开发者体验。
                 </p>
+                <a href="https://github.com/OpenLight-Studio" class="cta-button"
+                    >探索我们的代码</a
+                >
+            </section>
 
-                <h3>我们的服务</h3>
-                <ul>
-                    <li>Web 开发</li>
-                    <li>移动应用开发</li>
-                    <li>品牌设计</li>
-                    <li>数字营销</li>
-                </ul>
+            <section class="features">
+                <div class="feature-card">
+                    <h3>💡 编程语言</h3>
+                    <p>
+                        从零设计并实现高效、安全的编程语言，如 D-subtract ——
+                        一个轻量级表达式求值器。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚙️ 系统工具</h3>
+                    <p>
+                        开发底层工具链，包括内核模块、编译器、调试器，追求极致性能与可靠性。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌍 开源协作</h3>
+                    <p>
+                        所有项目 100% 开源，欢迎贡献代码、文档或创意。MIT
+                        许可证，自由使用。
+                    </p>
+                </div>
+            </section>
+        </main>
 
-                <button onclick="showMessage()">点击这里获取更多信息</button>
+        <footer>
+            <div class="container">
+                <p>© 2026 OpenLight Studio. Built with ❤️ and open source.</p>
+                <p>
+                    <a href="https://github.com/OpenLight-Studio">GitHub</a> •
+                    <a href="mailto:hello@openlight.studio">Contact</a>
+                </p>
             </div>
-        </div>
+        </footer>
 
+        <!-- 可选：添加 Google Analytics 或 Plausible（如需） -->
         <script>
-            function showMessage() {
-                alert(
-                    "感谢您的关注！请访问我们的 GitHub 获取更多信息：https://github.com/OpenLight-Studio",
-                );
-            }
+            // 自动适配深色/浅色模式（已通过 CSS 实现）
+            // 无需额外 JS，但保留扩展空间
         </script>
     </body>
 </html>
