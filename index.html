@@ -14,9 +14,10 @@
                 --fg: #ffffff;
                 --muted: #b0b0c0;
                 --accent: #818cf8; /* indigo-400 */
-                --card-bg: rgba(20, 20, 35, 0.5);
+                --card-bg: rgba(20, 20, 35, 0.6);
                 --border: rgba(129, 140, 248, 0.15);
                 --glass-blur: 16px;
+                --header-height: 80px;
                 color-scheme: dark;
             }
 
@@ -53,10 +54,17 @@
                 padding: 0 20px;
             }
 
+            /* Header */
             header {
-                padding: 2rem 0;
-                position: relative;
-                z-index: 10;
+                height: var(--header-height);
+                padding: 1.2rem 0;
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                background: rgba(10, 10, 15, 0.85);
+                backdrop-filter: blur(12px);
+                -webkit-backdrop-filter: blur(12px);
+                border-bottom: 1px solid var(--border);
             }
 
             nav {
@@ -66,7 +74,7 @@
             }
 
             .logo {
-                font-size: 1.7rem;
+                font-size: 1.6rem;
                 font-weight: 800;
                 letter-spacing: -0.5px;
                 background: linear-gradient(135deg, #c7d2fe, #a5b4fc);
@@ -85,7 +93,9 @@
 
             .nav-links a {
                 color: var(--muted);
+                text-decoration: none;
                 transition: all 0.2s ease;
+                position: relative;
             }
 
             .nav-links a:hover {
@@ -93,12 +103,34 @@
                 text-shadow: 0 0 8px rgba(199, 210, 254, 0.4);
             }
 
+            .nav-links a::after {
+                content: "";
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: var(--accent);
+                transition: width 0.3s ease;
+            }
+
+            .nav-links a:hover::after {
+                width: 100%;
+            }
+
+            /* Main Content */
             main {
-                padding: 6rem 0 8rem;
+                padding: calc(var(--header-height) + 4rem) 0 8rem;
                 position: relative;
                 z-index: 5;
             }
 
+            /* Scroll-margin for anchor links */
+            section[id] {
+                scroll-margin-top: calc(var(--header-height) + 1rem);
+            }
+
+            /* Hero */
             .hero {
                 text-align: center;
                 max-width: 850px;
@@ -106,7 +138,7 @@
             }
 
             .hero h1 {
-                font-size: clamp(3rem, 8vw, 5rem);
+                font-size: clamp(2.8rem, 8vw, 4.8rem);
                 font-weight: 900;
                 margin-bottom: 1.2rem;
                 line-height: 1.1;
@@ -115,11 +147,10 @@
                 background-clip: text;
                 color: transparent;
                 text-shadow: 0 0 20px rgba(199, 210, 254, 0.3);
-                transform: translateZ(0); /* 启用硬件加速 */
             }
 
             .hero p {
-                font-size: 1.3rem;
+                font-size: 1.25rem;
                 color: var(--muted);
                 margin-bottom: 2.5rem;
                 max-width: 650px;
@@ -136,6 +167,7 @@
                 padding: 1rem 2.4rem;
                 border-radius: 30px;
                 font-weight: 600;
+                text-decoration: none;
                 border: 1px solid var(--border);
                 transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
                 box-shadow: 0 4px 20px rgba(129, 140, 248, 0.1);
@@ -148,10 +180,25 @@
                 box-shadow: 0 6px 30px rgba(129, 140, 248, 0.3);
             }
 
-            .features {
+            /* Features */
+            .section-title {
+                text-align: center;
+                font-size: 2.2rem;
+                margin-bottom: 3.5rem;
+                background: linear-gradient(135deg, #e0e7ff, #a5b4fc);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                font-weight: 800;
+            }
+
+            .features,
+            .projects,
+            .team {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 2.5rem;
+                margin-bottom: 5rem;
             }
 
             .glass-card {
@@ -160,7 +207,7 @@
                 -webkit-backdrop-filter: blur(var(--glass-blur));
                 border: 1px solid var(--border);
                 border-radius: 24px;
-                padding: 2.8rem;
+                padding: 2.5rem;
                 transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
                 opacity: 0;
                 transform: translateY(20px);
@@ -172,14 +219,14 @@
             }
 
             .glass-card:hover {
-                transform: translateY(-6px);
+                transform: translateY(-8px);
                 border-color: rgba(129, 140, 248, 0.4);
                 box-shadow:
-                    0 10px 30px rgba(0, 0, 0, 0.3),
-                    0 0 0 1px rgba(129, 140, 248, 0.2);
+                    0 12px 30px rgba(0, 0, 0, 0.4),
+                    0 0 0 1px rgba(129, 140, 248, 0.25);
             }
 
-            .feature-card h3 {
+            .glass-card h3 {
                 font-size: 1.45rem;
                 margin-bottom: 1.1rem;
                 background: linear-gradient(135deg, #e0e7ff, #a5b4fc);
@@ -188,11 +235,61 @@
                 color: transparent;
             }
 
-            .feature-card p {
+            .glass-card p {
                 color: var(--muted);
                 font-size: 1.05rem;
             }
 
+            /* Projects */
+            .project-item {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .project-tags {
+                display: flex;
+                gap: 0.6rem;
+                flex-wrap: wrap;
+            }
+
+            .tag {
+                background: rgba(129, 140, 248, 0.15);
+                color: #c7d2fe;
+                padding: 0.25rem 0.75rem;
+                border-radius: 12px;
+                font-size: 0.85rem;
+            }
+
+            /* Roadmap */
+            .roadmap {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+                max-width: 800px;
+                margin: 0 auto 5rem;
+            }
+
+            .roadmap-item {
+                display: flex;
+                gap: 1.5rem;
+            }
+
+            .roadmap-dot {
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: var(--accent);
+                margin-top: 4px;
+            }
+
+            .roadmap-content h4 {
+                margin-bottom: 0.5rem;
+                color: #e0e7ff;
+            }
+
+            /* Footer */
             footer {
                 padding: 4rem 0 3rem;
                 text-align: center;
@@ -205,6 +302,7 @@
 
             footer a {
                 color: var(--muted);
+                text-decoration: none;
                 transition: all 0.2s;
             }
 
@@ -213,21 +311,37 @@
                 text-shadow: 0 0 8px rgba(199, 210, 254, 0.4);
             }
 
+            /* Mobile */
             @media (max-width: 768px) {
                 .nav-links {
                     display: none;
                 }
+
                 .hero h1 {
-                    font-size: 2.8rem;
+                    font-size: 2.5rem;
                 }
+
+                .hero p {
+                    font-size: 1.1rem;
+                }
+
                 .glass-card {
                     padding: 2rem;
+                }
+
+                .roadmap-item {
+                    flex-direction: column;
+                    gap: 0.8rem;
+                }
+
+                .roadmap-dot {
+                    align-self: flex-start;
                 }
             }
         </style>
     </head>
     <body>
-        <!-- 粒子背景容器 -->
+        <!-- 粒子背景 -->
         <div id="particles-js"></div>
 
         <header>
@@ -237,6 +351,7 @@
                     <div class="nav-links">
                         <a href="#projects">项目</a>
                         <a href="#about">关于</a>
+                        <a href="#roadmap">路线图</a>
                         <a href="https://github.com/OpenLight-Studio">GitHub</a>
                     </div>
                 </nav>
@@ -267,25 +382,116 @@
                 </a>
             </section>
 
-            <section class="features">
-                <div class="glass-card feature-card">
-                    <h3>💡 编程语言</h3>
-                    <p>
-                        从零设计并实现高效、安全的编程语言，如 D-subtract ——
-                        一个轻量级表达式求值器。
-                    </p>
+            <section id="projects">
+                <h2 class="section-title">精选项目</h2>
+                <div class="projects">
+                    <div class="glass-card project-item">
+                        <h3>D-subtract</h3>
+                        <div class="project-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">表达式求值</span>
+                            <span class="tag">MIT</span>
+                        </div>
+                        <p>
+                            一个轻量级、高性能的数学表达式解析与求值引擎，支持函数、变量与自定义操作符。
+                        </p>
+                    </div>
+                    <div class="glass-card project-item">
+                        <h3>KernelKit</h3>
+                        <div class="project-tags">
+                            <span class="tag">Rust</span>
+                            <span class="tag">OS</span>
+                            <span class="tag">x86_64</span>
+                        </div>
+                        <p>
+                            模块化操作系统内核框架，用于教学与实验性系统开发，支持多核启动与内存管理。
+                        </p>
+                    </div>
+                    <div class="glass-card project-item">
+                        <h3>DevFlow</h3>
+                        <div class="project-tags">
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">CLI</span>
+                            <span class="tag">自动化</span>
+                        </div>
+                        <p>
+                            开发者工作流自动化工具，一键构建、测试、部署你的开源项目。
+                        </p>
+                    </div>
                 </div>
-                <div class="glass-card feature-card">
-                    <h3>⚙️ 系统工具</h3>
-                    <p>
-                        开发底层工具链，包括内核模块、编译器、调试器，追求极致性能与可靠性。
-                    </p>
+            </section>
+
+            <section id="about">
+                <h2 class="section-title">关于 OpenLight</h2>
+                <div class="features">
+                    <div class="glass-card">
+                        <h3>💡 编程语言</h3>
+                        <p>
+                            从零设计并实现高效、安全的编程语言，如 D-subtract ——
+                            一个轻量级表达式求值器。
+                        </p>
+                    </div>
+                    <div class="glass-card">
+                        <h3>⚙️ 系统工具</h3>
+                        <p>
+                            开发底层工具链，包括内核模块、编译器、调试器，追求极致性能与可靠性。
+                        </p>
+                    </div>
+                    <div class="glass-card">
+                        <h3>🌍 开源协作</h3>
+                        <p>
+                            所有项目 100% 开源，MIT
+                            许可证，自由使用、修改、分发。
+                        </p>
+                    </div>
                 </div>
-                <div class="glass-card feature-card">
-                    <h3>🌍 开源协作</h3>
-                    <p>
-                        所有项目 100% 开源，MIT 许可证，自由使用、修改、分发。
-                    </p>
+
+                <div class="team">
+                    <div class="glass-card">
+                        <h3>加入我们</h3>
+                        <p>
+                            无论你是学生、工程师还是爱好者，只要热爱创造，欢迎参与贡献！
+                        </p>
+                        <a
+                            href="https://github.com/OpenLight-Studio"
+                            class="cta-button"
+                            style="margin-top: 1.2rem; justify-content: center"
+                        >
+                            成为贡献者
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="roadmap">
+                <h2 class="section-title">2026 路线图</h2>
+                <div class="roadmap">
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4>Q2: 发布 D-subtract v1.0</h4>
+                            <p>
+                                完成核心表达式引擎，支持标准数学函数与错误恢复机制。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4>Q3: KernelKit 多核调度</h4>
+                            <p>实现基本的 SMP 支持与任务调度器。</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-item">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4>Q4: DevFlow 集成 GitHub Actions</h4>
+                            <p>
+                                提供开箱即用的 CI/CD
+                                模板，简化开源项目发布流程。
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
@@ -300,14 +506,14 @@
             </div>
         </footer>
 
-        <!-- Particles.js CDN -->
+        <!-- Particles.js -->
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <script>
-            // 初始化粒子系统
+            // 初始化粒子
             particlesJS("particles-js", {
                 particles: {
                     number: {
-                        value: 80,
+                        value: 70,
                         density: { enable: true, value_area: 800 },
                     },
                     color: { value: "#818cf8" },
@@ -318,12 +524,12 @@
                         enable: true,
                         distance: 150,
                         color: "#818cf8",
-                        opacity: 0.15,
+                        opacity: 0.12,
                         width: 1,
                     },
                     move: {
                         enable: true,
-                        speed: 1,
+                        speed: 0.8,
                         direction: "none",
                         random: true,
                         out_mode: "out",
@@ -338,13 +544,13 @@
                     },
                     modes: {
                         repulse: { distance: 100 },
-                        push: { particles_nb: 4 },
+                        push: { particles_nb: 3 },
                     },
                 },
                 retina_detect: true,
             });
 
-            // 滚动动画：卡片淡入
+            // 滚动动画
             const observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach((entry) => {
@@ -358,6 +564,22 @@
 
             document.querySelectorAll(".glass-card").forEach((card) => {
                 observer.observe(card);
+            });
+
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(
+                        this.getAttribute("href"),
+                    );
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: "smooth",
+                        });
+                    }
+                });
             });
         </script>
     </body>
