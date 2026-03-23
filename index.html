@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>OpenLight Studio — 创造光，照亮未来</title>
+        <title>OpenLight Studio — 开源编程实验室</title>
         <meta
             name="description"
-            content="OpenLight Studio 是一个开源创新工作室，专注于编程语言、系统工具与下一代开发者体验。"
+            content="OpenLight Studio 是一个开源创新工作室，专注于编程语言、系统工具与开发者体验。"
         />
         <style>
             :root {
@@ -17,7 +17,7 @@
                 --card-bg: rgba(20, 20, 35, 0.6);
                 --border: rgba(129, 140, 248, 0.15);
                 --glass-blur: 16px;
-                --header-height: 80px;
+                --header-height: 70px;
                 color-scheme: dark;
             }
 
@@ -57,7 +57,7 @@
             /* Header */
             header {
                 height: var(--header-height);
-                padding: 1.2rem 0;
+                padding: 1rem 0;
                 position: sticky;
                 top: 0;
                 z-index: 100;
@@ -65,6 +65,7 @@
                 backdrop-filter: blur(12px);
                 -webkit-backdrop-filter: blur(12px);
                 border-bottom: 1px solid var(--border);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             }
 
             nav {
@@ -74,7 +75,7 @@
             }
 
             .logo {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
                 font-weight: 800;
                 letter-spacing: -0.5px;
                 background: linear-gradient(135deg, #c7d2fe, #a5b4fc);
@@ -86,7 +87,7 @@
 
             .nav-links {
                 display: flex;
-                gap: 1.8rem;
+                gap: 1.5rem;
                 font-size: 0.95rem;
                 font-weight: 500;
             }
@@ -95,7 +96,6 @@
                 color: var(--muted);
                 text-decoration: none;
                 transition: all 0.2s ease;
-                position: relative;
             }
 
             .nav-links a:hover {
@@ -103,24 +103,9 @@
                 text-shadow: 0 0 8px rgba(199, 210, 254, 0.4);
             }
 
-            .nav-links a::after {
-                content: "";
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background: var(--accent);
-                transition: width 0.3s ease;
-            }
-
-            .nav-links a:hover::after {
-                width: 100%;
-            }
-
             /* Main Content */
             main {
-                padding: calc(var(--header-height) + 4rem) 0 8rem;
+                padding: calc(var(--header-height) + 3.5rem) 0 8rem;
                 position: relative;
                 z-index: 5;
             }
@@ -138,7 +123,7 @@
             }
 
             .hero h1 {
-                font-size: clamp(2.8rem, 8vw, 4.8rem);
+                font-size: clamp(2.5rem, 8vw, 4rem);
                 font-weight: 900;
                 margin-bottom: 1.2rem;
                 line-height: 1.1;
@@ -150,7 +135,7 @@
             }
 
             .hero p {
-                font-size: 1.25rem;
+                font-size: 1.2rem;
                 color: var(--muted);
                 margin-bottom: 2.5rem;
                 max-width: 650px;
@@ -180,10 +165,10 @@
                 box-shadow: 0 6px 30px rgba(129, 140, 248, 0.3);
             }
 
-            /* Features */
+            /* Sections */
             .section-title {
                 text-align: center;
-                font-size: 2.2rem;
+                font-size: 2.1rem;
                 margin-bottom: 3.5rem;
                 background: linear-gradient(135deg, #e0e7ff, #a5b4fc);
                 -webkit-background-clip: text;
@@ -192,9 +177,7 @@
                 font-weight: 800;
             }
 
-            .features,
-            .projects,
-            .team {
+            .features {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
                 gap: 2.5rem;
@@ -219,11 +202,11 @@
             }
 
             .glass-card:hover {
-                transform: translateY(-8px);
+                transform: translateY(-6px);
                 border-color: rgba(129, 140, 248, 0.4);
                 box-shadow:
-                    0 12px 30px rgba(0, 0, 0, 0.4),
-                    0 0 0 1px rgba(129, 140, 248, 0.25);
+                    0 10px 30px rgba(0, 0, 0, 0.3),
+                    0 0 0 1px rgba(129, 140, 248, 0.2);
             }
 
             .glass-card h3 {
@@ -277,8 +260,8 @@
 
             .roadmap-dot {
                 flex-shrink: 0;
-                width: 16px;
-                height: 16px;
+                width: 12px;
+                height: 12px;
                 border-radius: 50%;
                 background: var(--accent);
                 margin-top: 4px;
@@ -318,7 +301,7 @@
                 }
 
                 .hero h1 {
-                    font-size: 2.5rem;
+                    font-size: 2.2rem;
                 }
 
                 .hero p {
@@ -383,39 +366,59 @@
             </section>
 
             <section id="projects">
-                <h2 class="section-title">精选项目</h2>
-                <div class="projects">
+                <h2 class="section-title">我们的项目</h2>
+                <div class="features">
                     <div class="glass-card project-item">
-                        <h3>D-subtract</h3>
+                        <h3>
+                            <a
+                                href="https://github.com/OpenLight-Studio/Frequency_Histogram_Clac"
+                                target="_blank"
+                                >Frequency_Histogram_Clac</a
+                            >
+                        </h3>
                         <div class="project-tags">
                             <span class="tag">C++</span>
-                            <span class="tag">表达式求值</span>
+                            <span class="tag">CLI</span>
                             <span class="tag">MIT</span>
                         </div>
                         <p>
-                            一个轻量级、高性能的数学表达式解析与求值引擎，支持函数、变量与自定义操作符。
+                            一个 C++
+                            工具，用于快速生成整数数据的频率直方图，支持自定义分组宽度。
                         </p>
                     </div>
                     <div class="glass-card project-item">
-                        <h3>KernelKit</h3>
+                        <h3>
+                            <a
+                                href="https://github.com/OpenLight-Studio/D-subtract"
+                                target="_blank"
+                                >D-subtract</a
+                            >
+                        </h3>
                         <div class="project-tags">
-                            <span class="tag">Rust</span>
-                            <span class="tag">OS</span>
-                            <span class="tag">x86_64</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">DSL</span>
+                            <span class="tag">MIT</span>
                         </div>
                         <p>
-                            模块化操作系统内核框架，用于教学与实验性系统开发，支持多核启动与内存管理。
+                            为青少年设计的计算机语言，支持基本数学表达式求值，结构简单易学。
                         </p>
                     </div>
                     <div class="glass-card project-item">
-                        <h3>DevFlow</h3>
+                        <h3>
+                            <a
+                                href="https://github.com/OpenLight-Studio/BrightS"
+                                target="_blank"
+                                >BrightS</a
+                            >
+                        </h3>
                         <div class="project-tags">
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">CLI</span>
-                            <span class="tag">自动化</span>
+                            <span class="tag">C</span>
+                            <span class="tag">系统编程</span>
+                            <span class="tag">GPLv2</span>
                         </div>
                         <p>
-                            开发者工作流自动化工具，一键构建、测试、部署你的开源项目。
+                            一个轻量级 C
+                            语言系统工具库，提供内存管理、日志和基础算法支持。
                         </p>
                     </div>
                 </div>
@@ -427,38 +430,23 @@
                     <div class="glass-card">
                         <h3>💡 编程语言</h3>
                         <p>
-                            从零设计并实现高效、安全的编程语言，如 D-subtract ——
-                            一个轻量级表达式求值器。
+                            我们设计并实现面向教育和实验的编程语言，如
+                            D-subtract，帮助青少年理解计算逻辑。
                         </p>
                     </div>
                     <div class="glass-card">
                         <h3>⚙️ 系统工具</h3>
                         <p>
-                            开发底层工具链，包括内核模块、编译器、调试器，追求极致性能与可靠性。
+                            开发底层工具链，如
+                            BrightS，提供高效、可靠的系统级功能支持。
                         </p>
                     </div>
                     <div class="glass-card">
                         <h3>🌍 开源协作</h3>
                         <p>
-                            所有项目 100% 开源，MIT
-                            许可证，自由使用、修改、分发。
+                            所有项目均开源，遵循 MIT 或 GPLv2
+                            许可证，欢迎社区贡献与反馈。
                         </p>
-                    </div>
-                </div>
-
-                <div class="team">
-                    <div class="glass-card">
-                        <h3>加入我们</h3>
-                        <p>
-                            无论你是学生、工程师还是爱好者，只要热爱创造，欢迎参与贡献！
-                        </p>
-                        <a
-                            href="https://github.com/OpenLight-Studio"
-                            class="cta-button"
-                            style="margin-top: 1.2rem; justify-content: center"
-                        >
-                            成为贡献者
-                        </a>
                     </div>
                 </div>
             </section>
@@ -469,26 +457,28 @@
                     <div class="roadmap-item">
                         <div class="roadmap-dot"></div>
                         <div class="roadmap-content">
-                            <h4>Q2: 发布 D-subtract v1.0</h4>
+                            <h4>Q2: 发布 Frequency_Histogram_Clac v1.1</h4>
                             <p>
-                                完成核心表达式引擎，支持标准数学函数与错误恢复机制。
+                                增加命令行参数解析，支持输入文件读取，输出格式化为
+                                CSV。
                             </p>
                         </div>
                     </div>
                     <div class="roadmap-item">
                         <div class="roadmap-dot"></div>
                         <div class="roadmap-content">
-                            <h4>Q3: KernelKit 多核调度</h4>
-                            <p>实现基本的 SMP 支持与任务调度器。</p>
+                            <h4>Q3: D-subtract 支持变量与函数</h4>
+                            <p>
+                                实现变量绑定、函数定义与调用，扩展表达式能力。
+                            </p>
                         </div>
                     </div>
                     <div class="roadmap-item">
                         <div class="roadmap-dot"></div>
                         <div class="roadmap-content">
-                            <h4>Q4: DevFlow 集成 GitHub Actions</h4>
+                            <h4>Q4: BrightS 添加线程安全支持</h4>
                             <p>
-                                提供开箱即用的 CI/CD
-                                模板，简化开源项目发布流程。
+                                引入互斥锁机制，使库可在多线程环境中安全使用。
                             </p>
                         </div>
                     </div>
@@ -513,7 +503,7 @@
             particlesJS("particles-js", {
                 particles: {
                     number: {
-                        value: 70,
+                        value: 60,
                         density: { enable: true, value_area: 800 },
                     },
                     color: { value: "#818cf8" },
