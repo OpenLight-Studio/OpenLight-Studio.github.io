@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>OpenLight Studio — 开源编程实验室</title>
+        <title>OpenLight Studio — 软件，工具和开发社群</title>
         <meta
             name="description"
             content="OpenLight Studio 是一个开源创新工作室，专注于编程语言、系统工具与开发者体验。"
@@ -17,7 +17,11 @@
                 --card-bg: rgba(20, 20, 35, 0.6);
                 --border: rgba(129, 140, 248, 0.15);
                 --glass-blur: 16px;
-                --header-height: 70px;
+                --header-padding: 1rem;
+                --header-min-height: 54px;
+                --header-total: calc(
+                    var(--header-min-height) + var(--header-padding) * 2
+                );
                 color-scheme: dark;
             }
 
@@ -56,8 +60,8 @@
 
             /* Header */
             header {
-                height: var(--header-height);
-                padding: 1rem 0;
+                min-height: var(--header-min-height);
+                padding: var(--header-padding) 0;
                 position: sticky;
                 top: 0;
                 z-index: 100;
@@ -105,14 +109,14 @@
 
             /* Main Content */
             main {
-                padding: calc(var(--header-height) + 3.5rem) 0 8rem;
+                padding: calc(var(--header-total) + 3.5rem) 0 8rem;
                 position: relative;
                 z-index: 5;
             }
 
             /* Scroll-margin for anchor links */
             section[id] {
-                scroll-margin-top: calc(var(--header-height) + 1rem);
+                scroll-margin-top: calc(var(--header-total) + 1rem);
             }
 
             /* Hero */
@@ -120,6 +124,7 @@
                 text-align: center;
                 max-width: 850px;
                 margin: 0 auto 5rem;
+                padding-top: 1.5rem; /* 替代 <br>，防止被顶栏遮挡 */
             }
 
             .hero h1 {
@@ -343,8 +348,7 @@
 
         <main class="container">
             <section class="hero">
-                <br />
-                <br />
+                <!-- 已删除两个 <br />，由 .hero { padding-top } 控制 -->
                 <h1>创造光，照亮未来</h1>
                 <p>
                     我们是一个开源创新工作室，致力于构建下一代编程语言、系统工具与开发者体验。
