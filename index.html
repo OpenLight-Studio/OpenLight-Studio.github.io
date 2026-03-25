@@ -3,580 +3,221 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>OpenLight Studio — 软件，工具和开发社群</title>
+        <title>OpenLight Studio | 照亮代码的未来</title>
         <meta
             name="description"
-            content="OpenLight Studio 是一个开源创新工作室，专注于编程语言、系统工具与开发者体验。"
+            content="OpenLight Studio - 自研操作系统内核 BrightS, D Struct Language, FH Clac"
         />
-        <style>
-            :root {
-                --bg: #0a0a0f;
-                --fg: #ffffff;
-                --muted: #b0b0c0;
-                --accent: #818cf8; /* indigo-400 */
-                --card-bg: rgba(20, 20, 35, 0.6);
-                --border: rgba(129, 140, 248, 0.15);
-                --glass-blur: 16px;
-                --header-padding: 1rem;
-                --header-min-height: 54px;
-                --header-total: calc(
-                    var(--header-min-height) + var(--header-padding) * 2
-                );
-                color-scheme: dark;
-            }
-
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family:
-                    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-                    Arial, sans-serif;
-                background: var(--bg);
-                color: var(--fg);
-                line-height: 1.6;
-                overflow-x: hidden;
-                min-height: 100vh;
-                position: relative;
-            }
-
-            #particles-js {
-                position: fixed;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                z-index: -1;
-            }
-
-            .container {
-                width: min(90%, 1200px);
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            /* Header */
-            header {
-                min-height: var(--header-min-height);
-                padding: var(--header-padding) 0;
-                position: sticky;
-                top: 0;
-                z-index: 100;
-                background: rgba(10, 10, 15, 0.85);
-                backdrop-filter: blur(12px);
-                -webkit-backdrop-filter: blur(12px);
-                border-bottom: 1px solid var(--border);
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            }
-
-            nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-
-            .logo {
-                font-size: 1.5rem;
-                font-weight: 800;
-                letter-spacing: -0.5px;
-                background: linear-gradient(135deg, #c7d2fe, #a5b4fc);
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
-                text-shadow: 0 0 10px rgba(199, 210, 254, 0.2);
-            }
-
-            .nav-links {
-                display: flex;
-                gap: 1.5rem;
-                font-size: 0.95rem;
-                font-weight: 500;
-            }
-
-            .nav-links a {
-                color: var(--muted);
-                text-decoration: none;
-                transition: all 0.2s ease;
-            }
-
-            .nav-links a:hover {
-                color: var(--fg);
-                text-shadow: 0 0 8px rgba(199, 210, 254, 0.4);
-            }
-
-            /* Main Content */
-            main {
-                padding: calc(var(--header-total) + 3.5rem) 0 8rem;
-                position: relative;
-                z-index: 5;
-            }
-
-            /* Scroll-margin for anchor links */
-            section[id] {
-                scroll-margin-top: calc(var(--header-total) + 1rem);
-            }
-
-            /* Hero */
-            .hero {
-                text-align: center;
-                max-width: 850px;
-                margin: 0 auto 5rem;
-                padding-top: 1.5rem; /* 替代 <br>，防止被顶栏遮挡 */
-            }
-
-            .hero h1 {
-                font-size: clamp(2.5rem, 8vw, 4rem);
-                font-weight: 900;
-                margin-bottom: 1.2rem;
-                line-height: 1.1;
-                background: linear-gradient(135deg, #e0e7ff, #c7d2fe, #a5b4fc);
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
-                text-shadow: 0 0 20px rgba(199, 210, 254, 0.3);
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-                color: var(--muted);
-                margin-bottom: 2.5rem;
-                max-width: 650px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .cta-button {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.6rem;
-                background: rgba(129, 140, 248, 0.15);
-                color: #d1d9ff;
-                padding: 1rem 2.4rem;
-                border-radius: 30px;
-                font-weight: 600;
-                text-decoration: none;
-                border: 1px solid var(--border);
-                transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-                box-shadow: 0 4px 20px rgba(129, 140, 248, 0.1);
-            }
-
-            .cta-button:hover {
-                background: rgba(129, 140, 248, 0.25);
-                color: white;
-                transform: translateY(-2px) scale(1.03);
-                box-shadow: 0 6px 30px rgba(129, 140, 248, 0.3);
-            }
-
-            /* Sections */
-            .section-title {
-                text-align: center;
-                font-size: 2.1rem;
-                margin-bottom: 3.5rem;
-                background: linear-gradient(135deg, #e0e7ff, #a5b4fc);
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
-                font-weight: 800;
-            }
-
-            .features {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 2.5rem;
-                margin-bottom: 5rem;
-            }
-
-            .glass-card {
-                background: var(--card-bg);
-                backdrop-filter: blur(var(--glass-blur));
-                -webkit-backdrop-filter: blur(var(--glass-blur));
-                border: 1px solid var(--border);
-                border-radius: 24px;
-                padding: 2.5rem;
-                transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            .glass-card.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            .glass-card:hover {
-                transform: translateY(-6px);
-                border-color: rgba(129, 140, 248, 0.4);
-                box-shadow:
-                    0 10px 30px rgba(0, 0, 0, 0.3),
-                    0 0 0 1px rgba(129, 140, 248, 0.2);
-            }
-
-            .glass-card h3 {
-                font-size: 1.45rem;
-                margin-bottom: 1.1rem;
-                background: linear-gradient(135deg, #e0e7ff, #a5b4fc);
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent;
-            }
-
-            .glass-card p {
-                color: var(--muted);
-                font-size: 1.05rem;
-            }
-
-            /* Projects */
-            .project-item {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .project-tags {
-                display: flex;
-                gap: 0.6rem;
-                flex-wrap: wrap;
-            }
-
-            .tag {
-                background: rgba(129, 140, 248, 0.15);
-                color: #c7d2fe;
-                padding: 0.25rem 0.75rem;
-                border-radius: 12px;
-                font-size: 0.85rem;
-            }
-
-            /* Roadmap */
-            .roadmap {
-                display: flex;
-                flex-direction: column;
-                gap: 2rem;
-                max-width: 800px;
-                margin: 0 auto 5rem;
-            }
-
-            .roadmap-item {
-                display: flex;
-                gap: 1.5rem;
-            }
-
-            .roadmap-dot {
-                flex-shrink: 0;
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background: var(--accent);
-                margin-top: 4px;
-            }
-
-            .roadmap-content h4 {
-                margin-bottom: 0.5rem;
-                color: #e0e7ff;
-            }
-
-            /* Footer */
-            footer {
-                padding: 4rem 0 3rem;
-                text-align: center;
-                color: var(--muted);
-                font-size: 0.95rem;
-                border-top: 1px solid var(--border);
-                position: relative;
-                z-index: 5;
-            }
-
-            footer a {
-                color: var(--muted);
-                text-decoration: none;
-                transition: all 0.2s;
-            }
-
-            footer a:hover {
-                color: #d1d9ff;
-                text-shadow: 0 0 8px rgba(199, 210, 254, 0.4);
-            }
-
-            /* Mobile */
-            @media (max-width: 768px) {
-                .nav-links {
-                    display: none;
-                }
-
-                .hero h1 {
-                    font-size: 2.2rem;
-                }
-
-                .hero p {
-                    font-size: 1.1rem;
-                }
-
-                .glass-card {
-                    padding: 2rem;
-                }
-
-                .roadmap-item {
-                    flex-direction: column;
-                    gap: 0.8rem;
-                }
-
-                .roadmap-dot {
-                    align-self: flex-start;
-                }
-            }
-        </style>
+        <!-- 引入谷歌字体 -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- 引入样式表 -->
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <!-- 粒子背景 -->
-        <div id="particles-js"></div>
+        <!-- 导航栏 -->
+        <nav class="navbar">
+            <div class="container nav-content">
+                <div class="logo">OpenLight<span class="dot">.</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about">关于</a></li>
+                    <li><a href="#projects">项目</a></li>
+                    <li><a href="#join">加入</a></li>
+                    <li>
+                        <a
+                            href="https://github.com/OpenLight-Studio"
+                            target="_blank"
+                            class="btn-gh"
+                            >GitHub</a
+                        >
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
 
-        <header>
-            <div class="container">
-                <nav>
-                    <div class="logo">OpenLight Studio</div>
-                    <div class="nav-links">
-                        <a href="#projects">项目</a>
-                        <a href="#about">关于</a>
-                        <a href="#roadmap">路线图</a>
-                        <a href="https://github.com/OpenLight-Studio">GitHub</a>
-                    </div>
-                </nav>
+        <!-- 英雄区域 (Hero Section) -->
+        <header class="hero">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <h1 class="fade-in">
+                    We Build the <span class="highlight">Light</span> Behind
+                    Code.
+                </h1>
+                <p class="subtitle fade-in delay-1">
+                    由 Open 工作室与闪电工作室于 2022 年合并而成。
+                </p>
+                <p class="typewriter fade-in delay-2" id="typewriter"></p>
+                <div class="hero-btns fade-in delay-3">
+                    <a href="#projects" class="btn btn-primary">探索项目</a>
+                    <a
+                        href="https://qm.qq.com/q/CR5pnbgOUo"
+                        target="_blank"
+                        class="btn btn-outline"
+                        >加入我们</a
+                    >
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span></span>
             </div>
         </header>
 
-        <main class="container">
-            <section class="hero">
-                <!-- 已删除两个 <br />，由 .hero { padding-top } 控制 -->
-                <h1>创造光，照亮未来</h1>
+        <!-- 关于部分 -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>我们的起源</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>2022.12.01</h3>
+                        <p>
+                            OpenLight Studio
+                            正式成立。这是两个充满激情的团队——<strong
+                                >Open 工作室</strong
+                            >与<strong>闪电工作室</strong>的历史性合并。
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <h3>使命</h3>
+                        <p>
+                            致力于底层技术的探索与教育普及。从操作系统内核到青少年编程语言，我们试图构建更明亮、更易懂的计算世界。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目部分 -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <div class="section-header">
+                    <h2>核心项目</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="project-grid">
+                    <!-- 项目 1: BrightS -->
+                    <article class="project-card" data-aos="fade-up">
+                        <div class="card-icon">⚡</div>
+                        <h3>BrightS</h3>
+                        <span class="tag kernel">OS Kernel</span>
+                        <p>
+                            一个完全自研的操作系统内核。追求极致的性能与简洁的架构，为下一代计算设备提供核心动力。
+                        </p>
+                        <a
+                            href="https://github.com/OpenLight-Studio"
+                            target="_blank"
+                            class="card-link"
+                            >查看源码 &rarr;</a
+                        >
+                    </article>
+
+                    <!-- 项目 2: D Struct Language -->
+                    <article class="project-card" data-aos="fade-up">
+                        <div class="card-icon">🧩</div>
+                        <h3>D Struct Language (D--)</h3>
+                        <span class="tag lang">Programming Lang</span>
+                        <p>
+                            专为青少年设计的编程语言。通过结构化思维引导，让编程像搭积木一样简单有趣，降低技术门槛。
+                        </p>
+                        <a
+                            href="https://github.com/OpenLight-Studio"
+                            target="_blank"
+                            class="card-link"
+                            >了解语法 &rarr;</a
+                        >
+                    </article>
+
+                    <!-- 项目 3: FH Clac -->
+                    <article class="project-card" data-aos="fade-up">
+                        <div class="card-icon">📊</div>
+                        <h3>FH Clac</h3>
+                        <span class="tag tool">Utility</span>
+                        <p>
+                            一个轻量级、高效率的直方图生成器。快速将数据转化为直观的视觉图表，服务于数据分析与教学。
+                        </p>
+                        <a
+                            href="https://github.com/OpenLight-Studio"
+                            target="_blank"
+                            class="card-link"
+                            >立即使用 &rarr;</a
+                        >
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 加入部分 -->
+        <section id="join" class="section join">
+            <div class="container join-content">
+                <h2>与光同行</h2>
                 <p>
-                    我们是一个开源创新工作室，致力于构建下一代编程语言、系统工具与开发者体验。
+                    无论你是内核黑客、语言设计爱好者，还是数据可视化专家，这里都有你的位置。
                 </p>
-                <a
-                    href="https://github.com/OpenLight-Studio"
-                    class="cta-button"
-                >
-                    <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 16 16"
-                        fill="currentColor"
+                <div class="join-actions">
+                    <a
+                        href="https://qm.qq.com/q/CR5pnbgOUo"
+                        target="_blank"
+                        class="btn btn-qq"
                     >
-                        <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                        />
-                    </svg>
-                    探索我们的代码
-                </a>
-            </section>
-
-            <section id="projects">
-                <h2 class="section-title">我们的项目</h2>
-                <div class="features">
-                    <div class="glass-card project-item">
-                        <h3>
-                            <a
-                                href="https://github.com/OpenLight-Studio/Frequency_Histogram_Clac"
-                                target="_blank"
-                                >Frequency_Histogram_Clac</a
-                            >
-                        </h3>
-                        <div class="project-tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">CLI</span>
-                            <span class="tag">MIT</span>
-                        </div>
-                        <p>
-                            一个 C++
-                            工具，用于快速生成整数数据的频率直方图，支持自定义分组宽度。
-                        </p>
-                    </div>
-                    <div class="glass-card project-item">
-                        <h3>
-                            <a
-                                href="https://github.com/OpenLight-Studio/D-subtract"
-                                target="_blank"
-                                >D-subtract</a
-                            >
-                        </h3>
-                        <div class="project-tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">DSL</span>
-                            <span class="tag">MIT</span>
-                        </div>
-                        <p>
-                            为青少年设计的计算机语言，支持基本数学表达式求值，结构简单易学。
-                        </p>
-                    </div>
-                    <div class="glass-card project-item">
-                        <h3>
-                            <a
-                                href="https://github.com/OpenLight-Studio/BrightS"
-                                target="_blank"
-                                >BrightS</a
-                            >
-                        </h3>
-                        <div class="project-tags">
-                            <span class="tag">C</span>
-                            <span class="tag">系统编程</span>
-                            <span class="tag">GPLv2</span>
-                        </div>
-                        <p>
-                            一个轻量级 C
-                            语言系统内核，提供内存管理、日志和基础算法支持。
-                        </p>
-                    </div>
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                            ></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        加入 QQ 群
+                    </a>
+                    <a
+                        href="https://github.com/OpenLight-Studio"
+                        target="_blank"
+                        class="btn btn-gh-dark"
+                    >
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                            ></path>
+                        </svg>
+                        GitHub Organization
+                    </a>
                 </div>
-            </section>
-
-            <section id="about">
-                <h2 class="section-title">关于 OpenLight</h2>
-                <div class="features">
-                    <div class="glass-card">
-                        <h3>💡 编程语言</h3>
-                        <p>
-                            我们设计并实现面向教育和实验的编程语言，如
-                            D-subtract，帮助青少年理解计算逻辑。
-                        </p>
-                    </div>
-                    <div class="glass-card">
-                        <h3>⚙️ 系统工具</h3>
-                        <p>
-                            开发底层工具链，如
-                            BrightS，提供高效、可靠的系统级功能支持。
-                        </p>
-                    </div>
-                    <div class="glass-card">
-                        <h3>🌍 开源协作</h3>
-                        <p>
-                            所有项目均开源，遵循 MIT 或 GPLv2
-                            许可证，欢迎社区贡献与反馈。
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="roadmap">
-                <h2 class="section-title">2026 路线图</h2>
-                <div class="roadmap">
-                    <div class="roadmap-item">
-                        <div class="roadmap-dot"></div>
-                        <div class="roadmap-content">
-                            <h4>Q2: 发布 Frequency_Histogram_Clac v1.1</h4>
-                            <p>
-                                增加命令行参数解析，支持输入文件读取，输出格式化为
-                                CSV。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="roadmap-item">
-                        <div class="roadmap-dot"></div>
-                        <div class="roadmap-content">
-                            <h4>Q3: D-subtract 支持变量与函数</h4>
-                            <p>
-                                实现变量绑定、函数定义与调用，扩展表达式能力。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="roadmap-item">
-                        <div class="roadmap-dot"></div>
-                        <div class="roadmap-content">
-                            <h4>Q4: BrightS 添加线程安全支持</h4>
-                            <p>
-                                引入互斥锁机制，使库可在多线程环境中安全使用。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
+            </div>
+        </section>
 
         <footer>
             <div class="container">
-                <p>© 2026 OpenLight Studio. Built with ❤️ and open source.</p>
-                <p>
-                    <a href="https://github.com/OpenLight-Studio">GitHub</a> •
-                    <a href="mailto:hello@openlight.studio">Contact</a>
-                </p>
+                <p>&copy; 2022-2026 OpenLight Studio. All Rights Reserved.</p>
+                <p class="footer-note">Designed with Light & Code.</p>
             </div>
         </footer>
 
-        <!-- Particles.js -->
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        <script>
-            // 初始化粒子
-            particlesJS("particles-js", {
-                particles: {
-                    number: {
-                        value: 60,
-                        density: { enable: true, value_area: 800 },
-                    },
-                    color: { value: "#818cf8" },
-                    shape: { type: "circle" },
-                    opacity: { value: 0.2, random: true },
-                    size: { value: 2, random: true },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: "#818cf8",
-                        opacity: 0.12,
-                        width: 1,
-                    },
-                    move: {
-                        enable: true,
-                        speed: 0.8,
-                        direction: "none",
-                        random: true,
-                        out_mode: "out",
-                    },
-                },
-                interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                        onhover: { enable: true, mode: "repulse" },
-                        onclick: { enable: true, mode: "push" },
-                        resize: true,
-                    },
-                    modes: {
-                        repulse: { distance: 100 },
-                        push: { particles_nb: 3 },
-                    },
-                },
-                retina_detect: true,
-            });
-
-            // 滚动动画
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add("visible");
-                        }
-                    });
-                },
-                { threshold: 0.1 },
-            );
-
-            document.querySelectorAll(".glass-card").forEach((card) => {
-                observer.observe(card);
-            });
-
-            // 平滑滚动
-            document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-                anchor.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(
-                        this.getAttribute("href"),
-                    );
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 80,
-                            behavior: "smooth",
-                        });
-                    }
-                });
-            });
-        </script>
+        <!-- 引入脚本 -->
+        <script src="script.js"></script>
     </body>
 </html>
