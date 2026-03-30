@@ -1165,6 +1165,16 @@ footer {
     margin-bottom: 8px;
 }
 
+.project-license {
+    font-family: var(--font-code);
+    font-size: 0.75rem;
+    color: var(--text-accent);
+    background: rgba(124, 58, 237, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
 .project-detail-body {
     padding: 40px;
 }
@@ -1212,6 +1222,23 @@ footer {
     gap: 12px;
     flex-wrap: wrap;
     margin-bottom: 32px;
+}
+
+.project-stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+
+.project-stats .stat-item {
+    font-family: var(--font-code);
+    font-size: 0.85rem;
+    color: var(--text-main);
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
 }
 
 .tech-tag {

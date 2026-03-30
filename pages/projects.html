@@ -57,27 +57,29 @@
                                 <div class="project-meta">
                                     <span class="tag kernel">OS Kernel</span>
                                     <h2>BrightS</h2>
+                                    <span class="project-license">GPL-2.0</span>
                                 </div>
                             </div>
                             <div class="project-detail-body">
                                 <p class="project-description">
-                                    BrightS 是一个完全自研的操作系统内核，致力于追求极致的性能与简洁的架构。我们从零开始设计内核的每一个组件，包括内存管理、进程调度、文件系统等核心模块。
+                                    BrightS 是一个基于 UNIX V6 设计理念的 x86_64 UEFI 内核。核心设计追求简单、可检查、可理解，支持物理机和 QEMU 下的 UEFI 启动。
                                 </p>
                                 <div class="project-features">
-                                    <h4>核心特性</h4>
+                                    <h4>当前状态</h4>
                                     <ul>
-                                        <li>微内核架构设计</li>
-                                        <li>高效的内存管理机制</li>
-                                        <li>现代化的进程调度器</li>
-                                        <li>模块化的驱动框架</li>
+                                        <li>UEFI 入口和基础平台初始化</li>
+                                        <li>串口控制台输出 (QEMU -serial stdio)</li>
+                                        <li>PCI 扫描和存储探测 (NVMe/AHCI/RAM disk)</li>
+                                        <li>Btrfs 文件系统挂载</li>
+                                        <li>交互式 Shell (guest$ / root#)</li>
                                     </ul>
                                 </div>
-                                <div class="project-tech">
-                                    <span class="tech-tag">C</span>
-                                    <span class="tech-tag">Assembly</span>
-                                    <span class="tech-tag">x86_64</span>
+                                <div class="project-stats">
+                                    <span class="stat-item">21 Commits</span>
+                                    <span class="stat-item">C 66.4%</span>
+                                    <span class="stat-item">Makefile 22.2%</span>
                                 </div>
-                                <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn btn-primary">
+                                <a href="https://github.com/OpenLight-Studio/BrightS" target="_blank" class="btn btn-primary">
                                     查看源码
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
@@ -91,28 +93,29 @@
                                 <div class="project-icon-large">🧩</div>
                                 <div class="project-meta">
                                     <span class="tag lang">Programming Lang</span>
-                                    <h2>D Struct Language (D--)</h2>
+                                    <h2>D Substract (D--)</h2>
+                                    <span class="project-license">MIT</span>
                                 </div>
                             </div>
                             <div class="project-detail-body">
                                 <p class="project-description">
-                                    D-- 是一门高性能、简单易学的面向对象编程语言。我们设计这门语言的初衷是让青少年能够轻松理解编程的核心概念，同时不牺牲性能和表达能力。
+                                    D-- 是一个专门为青少年编写的编程语言。设计由 OpenLight LLC 用心打造，让年轻学习者能够轻松理解编程的核心概念。
                                 </p>
                                 <div class="project-features">
-                                    <h4>语言特性</h4>
+                                    <h4>语言特点</h4>
                                     <ul>
-                                        <li>简洁直观的语法</li>
+                                        <li>专为青少年设计</li>
+                                        <li>简洁易学的语法</li>
                                         <li>面向对象编程支持</li>
-                                        <li>类型安全与推断</li>
-                                        <li>丰富的标准库</li>
+                                        <li>开源 MIT 许可证</li>
                                     </ul>
                                 </div>
-                                <div class="project-tech">
-                                    <span class="tech-tag">Rust</span>
-                                    <span class="tech-tag">LLVM</span>
-                                    <span class="tech-tag">Compiler</span>
+                                <div class="project-stats">
+                                    <span class="stat-item">10 Commits</span>
+                                    <span class="stat-item">C++ 98.3%</span>
+                                    <span class="stat-item">Makefile 1.7%</span>
                                 </div>
-                                <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn btn-primary">
+                                <a href="https://github.com/OpenLight-Studio/D-subtract" target="_blank" class="btn btn-primary">
                                     了解语法
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
@@ -126,28 +129,29 @@
                                 <div class="project-icon-large">📊</div>
                                 <div class="project-meta">
                                     <span class="tag tool">Utility</span>
-                                    <h2>FH Clac</h2>
+                                    <h2>Frequency Histogram Clac</h2>
+                                    <span class="project-license">MIT</span>
                                 </div>
                             </div>
                             <div class="project-detail-body">
                                 <p class="project-description">
-                                    FH Clac 是一个轻量级、高效率的直方图生成器。它能够快速将数据转化为直观的视觉图表，服务于数据分析与教学场景，让数据可视化变得简单。
+                                    一个跨平台的 C++ 工具，可从整数数据生成 ASCII 直方图。输入数据，指定分组宽度，即可在终端中获得直观的频次分布图。
                                 </p>
                                 <div class="project-features">
                                     <h4>功能特点</h4>
                                     <ul>
-                                        <li>快速数据处理</li>
-                                        <li>多种图表类型</li>
-                                        <li>导出多种格式</li>
-                                        <li>命令行友好</li>
+                                        <li>交互式输入，支持空格或换行分隔</li>
+                                        <li>自动按指定宽度分组统计</li>
+                                        <li>ASCII 可视化输出</li>
+                                        <li>跨平台支持 (Linux/macOS/Windows)</li>
                                     </ul>
                                 </div>
-                                <div class="project-tech">
-                                    <span class="tech-tag">Python</span>
-                                    <span class="tech-tag">CLI</span>
-                                    <span class="tech-tag">Data Viz</span>
+                                <div class="project-stats">
+                                    <span class="stat-item">16 Commits</span>
+                                    <span class="stat-item">2 Stars</span>
+                                    <span class="stat-item">v1.0.2</span>
                                 </div>
-                                <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn btn-primary">
+                                <a href="https://github.com/OpenLight-Studio/Frequency_Histogram_Clac" target="_blank" class="btn btn-primary">
                                     立即使用
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
