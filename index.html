@@ -8,18 +8,18 @@
             name="description"
             content="OpenLight Studio - 自研操作系统内核 BrightS, D Struct Language, FH Clac"
         />
-        <!-- 引入谷歌字体 -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
             rel="stylesheet"
         />
-        <!-- 引入样式表 -->
         <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>" />
     </head>
     <body>
-        <!-- 导航栏 -->
+        <canvas id="particles-canvas"></canvas>
+
         <nav class="navbar">
             <div class="container nav-content">
                 <div class="logo">OpenLight<span class="dot">.</span></div>
@@ -44,7 +44,13 @@
             </div>
         </nav>
 
-        <!-- 英雄区域 (Hero Section) -->
+        <div class="mobile-menu">
+            <a href="#about">关于</a>
+            <a href="#projects">项目</a>
+            <a href="#join">加入</a>
+            <a href="https://github.com/OpenLight-Studio" target="_blank">GitHub</a>
+        </div>
+
         <header class="hero">
             <div class="hero-bg"></div>
             <div class="container hero-content">
@@ -69,7 +75,6 @@
             </div>
         </header>
 
-        <!-- 关于部分 -->
         <section id="about" class="section about">
             <div class="container">
                 <div class="section-header">
@@ -96,7 +101,6 @@
             </div>
         </section>
 
-        <!-- 项目部分 -->
         <section id="projects" class="section projects">
             <div class="container">
                 <div class="section-header">
@@ -104,8 +108,7 @@
                     <div class="line"></div>
                 </div>
                 <div class="project-grid">
-                    <!-- 项目 1: BrightS -->
-                    <article class="project-card" data-aos="fade-up">
+                    <article class="project-card">
                         <div class="card-icon">⚡</div>
                         <h3>BrightS</h3>
                         <span class="tag kernel">OS Kernel</span>
@@ -116,12 +119,14 @@
                             href="https://github.com/OpenLight-Studio"
                             target="_blank"
                             class="card-link"
-                            >查看源码 &rarr;</a
-                        >
+                            >查看源码
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </article>
 
-                    <!-- 项目 2: D Struct Language -->
-                    <article class="project-card" data-aos="fade-up">
+                    <article class="project-card">
                         <div class="card-icon">🧩</div>
                         <h3>D Struct Language (D--)</h3>
                         <span class="tag lang">Programming Lang</span>
@@ -130,12 +135,14 @@
                             href="https://github.com/OpenLight-Studio"
                             target="_blank"
                             class="card-link"
-                            >了解语法 &rarr;</a
-                        >
+                            >了解语法
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </article>
 
-                    <!-- 项目 3: FH Clac -->
-                    <article class="project-card" data-aos="fade-up">
+                    <article class="project-card">
                         <div class="card-icon">📊</div>
                         <h3>FH Clac</h3>
                         <span class="tag tool">Utility</span>
@@ -146,14 +153,16 @@
                             href="https://github.com/OpenLight-Studio"
                             target="_blank"
                             class="card-link"
-                            >立即使用 &rarr;</a
-                        >
+                            >立即使用
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- 加入部分 -->
         <section id="join" class="section join">
             <div class="container join-content">
                 <h2>与光同行</h2>
@@ -213,7 +222,6 @@
             </div>
         </footer>
 
-        <!-- 引入脚本 -->
         <script src="script.js"></script>
     </body>
 </html>
