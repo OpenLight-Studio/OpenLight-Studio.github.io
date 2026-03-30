@@ -4,16 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>OpenLight Studio | 照亮代码的未来</title>
-        <meta
-            name="description"
-            content="OpenLight Studio - 自研操作系统内核 BrightS, D Struct Language, FH Clac"
-        />
+        <meta name="description" content="OpenLight Studio - 自研操作系统内核 BrightS, D Struct Language, FH Clac" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="style.css" />
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>" />
     </head>
@@ -22,18 +16,13 @@
 
         <nav class="navbar">
             <div class="container nav-content">
-                <div class="logo">OpenLight<span class="dot">.</span></div>
+                <a href="/" class="logo">OpenLight<span class="dot">.</span></a>
                 <ul class="nav-links">
-                    <li><a href="#about">关于</a></li>
-                    <li><a href="#projects">项目</a></li>
-                    <li><a href="#join">加入</a></li>
+                    <li><a href="/pages/about.html">关于</a></li>
+                    <li><a href="/pages/projects.html">项目</a></li>
+                    <li><a href="/pages/join.html">加入</a></li>
                     <li>
-                        <a
-                            href="https://github.com/OpenLight-Studio"
-                            target="_blank"
-                            class="btn-gh"
-                            >GitHub</a
-                        >
+                        <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn-gh">GitHub</a>
                     </li>
                 </ul>
                 <div class="hamburger">
@@ -45,9 +34,9 @@
         </nav>
 
         <div class="mobile-menu">
-            <a href="#about">关于</a>
-            <a href="#projects">项目</a>
-            <a href="#join">加入</a>
+            <a href="/pages/about.html">关于</a>
+            <a href="/pages/projects.html">项目</a>
+            <a href="/pages/join.html">加入</a>
             <a href="https://github.com/OpenLight-Studio" target="_blank">GitHub</a>
         </div>
 
@@ -55,19 +44,13 @@
             <div class="hero-bg"></div>
             <div class="container hero-content">
                 <h1 class="fade-in">
-                    We Build the <span class="highlight">Light</span> Behind
-                    Code.
+                    We Build the <span class="highlight">Light</span> Behind Code.
                 </h1>
                 <p class="subtitle fade-in delay-1">透过代码，传递光亮</p>
                 <p class="typewriter fade-in delay-2" id="typewriter"></p>
                 <div class="hero-btns fade-in delay-3">
-                    <a href="#projects" class="btn btn-primary">探索项目</a>
-                    <a
-                        href="https://qm.qq.com/q/CR5pnbgOUo"
-                        target="_blank"
-                        class="btn btn-outline"
-                        >加入我们</a
-                    >
+                    <a href="/pages/projects.html" class="btn btn-primary">探索项目</a>
+                    <a href="/pages/join.html" class="btn btn-outline">加入我们</a>
                 </div>
             </div>
             <div class="scroll-indicator">
@@ -75,141 +58,26 @@
             </div>
         </header>
 
-        <section id="about" class="section about">
+        <section class="section preview-section">
             <div class="container">
-                <div class="section-header">
-                    <h2>我们的起源</h2>
-                    <div class="line"></div>
-                </div>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <h3>2022.12.01</h3>
-                        <p>
-                            OpenLight Studio
-                            正式成立。这是两个充满激情的团队——<strong
-                                >Open 工作室</strong
-                            >与<strong>闪电工作室</strong>的历史性合并。
-                        </p>
-                    </div>
-                    <div class="about-card">
-                        <h3>使命</h3>
-                        <p>
-                            致力于底层技术的探索与教育普及。从操作系统内核到青少年编程语言，我们试图构建更明亮、更易懂的计算世界。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="section projects">
-            <div class="container">
-                <div class="section-header">
-                    <h2>核心项目</h2>
-                    <div class="line"></div>
-                </div>
-                <div class="project-grid">
-                    <article class="project-card">
-                        <div class="card-icon">⚡</div>
-                        <h3>BrightS</h3>
-                        <span class="tag kernel">OS Kernel</span>
-                        <p>
-                            一个完全自研的操作系统内核。追求极致的性能与简洁的架构，为下一代计算设备提供核心动力。
-                        </p>
-                        <a
-                            href="https://github.com/OpenLight-Studio"
-                            target="_blank"
-                            class="card-link"
-                            >查看源码
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="card-icon">🧩</div>
-                        <h3>D Struct Language (D--)</h3>
-                        <span class="tag lang">Programming Lang</span>
-                        <p>高性能，简单易学的面向对象式编程语言</p>
-                        <a
-                            href="https://github.com/OpenLight-Studio"
-                            target="_blank"
-                            class="card-link"
-                            >了解语法
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                    </article>
-
-                    <article class="project-card">
-                        <div class="card-icon">📊</div>
-                        <h3>FH Clac</h3>
-                        <span class="tag tool">Utility</span>
-                        <p>
-                            一个轻量级、高效率的直方图生成器。快速将数据转化为直观的视觉图表，服务于数据分析与教学。
-                        </p>
-                        <a
-                            href="https://github.com/OpenLight-Studio"
-                            target="_blank"
-                            class="card-link"
-                            >立即使用
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M5 12h14M12 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="join" class="section join">
-            <div class="container join-content">
-                <h2>与光同行</h2>
-                <p>
-                    无论你是内核黑客、语言设计爱好者，还是数据可视化专家，这里都有你的位置。
-                </p>
-                <div class="join-actions">
-                    <a
-                        href="https://qm.qq.com/q/CR5pnbgOUo"
-                        target="_blank"
-                        class="btn btn-qq"
-                    >
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path
-                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
-                            ></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                        加入 QQ 群
+                <div class="preview-grid">
+                    <a href="/pages/about.html" class="preview-card">
+                        <div class="preview-icon">🌟</div>
+                        <h3>关于我们</h3>
+                        <p>了解 OpenLight Studio 的起源与使命</p>
+                        <span class="preview-link">了解更多 →</span>
                     </a>
-                    <a
-                        href="https://github.com/OpenLight-Studio"
-                        target="_blank"
-                        class="btn btn-gh-dark"
-                    >
-                        <svg
-                            width="20"
-                            height="20"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
-                            ></path>
-                        </svg>
-                        GitHub Organization
+                    <a href="/pages/projects.html" class="preview-card">
+                        <div class="preview-icon">⚡</div>
+                        <h3>核心项目</h3>
+                        <p>探索 BrightS、D--、FH Clac 等项目</p>
+                        <span class="preview-link">查看项目 →</span>
+                    </a>
+                    <a href="/pages/join.html" class="preview-card">
+                        <div class="preview-icon">🚀</div>
+                        <h3>加入我们</h3>
+                        <p>与志同道合的开发者一起创造</p>
+                        <span class="preview-link">立即加入 →</span>
                     </a>
                 </div>
             </div>

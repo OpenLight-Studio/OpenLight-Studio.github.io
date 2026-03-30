@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>核心项目 | OpenLight Studio</title>
+        <meta name="description" content="探索 OpenLight Studio 的核心项目：BrightS 内核、D-- 语言、FH Clac" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>" />
+    </head>
+    <body>
+        <canvas id="particles-canvas"></canvas>
+
+        <nav class="navbar">
+            <div class="container nav-content">
+                <a href="/" class="logo">OpenLight<span class="dot">.</span></a>
+                <ul class="nav-links">
+                    <li><a href="/pages/about.html">关于</a></li>
+                    <li><a href="/pages/projects.html" class="active">项目</a></li>
+                    <li><a href="/pages/join.html">加入</a></li>
+                    <li>
+                        <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn-gh">GitHub</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu">
+            <a href="/pages/about.html">关于</a>
+            <a href="/pages/projects.html">项目</a>
+            <a href="/pages/join.html">加入</a>
+            <a href="https://github.com/OpenLight-Studio" target="_blank">GitHub</a>
+        </div>
+
+        <main class="page-content">
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="fade-in">核心项目</h1>
+                    <p class="page-subtitle fade-in delay-1">探索我们的技术成果</p>
+                </div>
+            </div>
+
+            <section class="section">
+                <div class="container">
+                    <div class="project-showcase">
+                        <article class="project-detail fade-in">
+                            <div class="project-detail-header">
+                                <div class="project-icon-large">⚡</div>
+                                <div class="project-meta">
+                                    <span class="tag kernel">OS Kernel</span>
+                                    <h2>BrightS</h2>
+                                </div>
+                            </div>
+                            <div class="project-detail-body">
+                                <p class="project-description">
+                                    BrightS 是一个完全自研的操作系统内核，致力于追求极致的性能与简洁的架构。我们从零开始设计内核的每一个组件，包括内存管理、进程调度、文件系统等核心模块。
+                                </p>
+                                <div class="project-features">
+                                    <h4>核心特性</h4>
+                                    <ul>
+                                        <li>微内核架构设计</li>
+                                        <li>高效的内存管理机制</li>
+                                        <li>现代化的进程调度器</li>
+                                        <li>模块化的驱动框架</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">C</span>
+                                    <span class="tech-tag">Assembly</span>
+                                    <span class="tech-tag">x86_64</span>
+                                </div>
+                                <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn btn-primary">
+                                    查看源码
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="project-detail fade-in delay-1">
+                            <div class="project-detail-header">
+                                <div class="project-icon-large">🧩</div>
+                                <div class="project-meta">
+                                    <span class="tag lang">Programming Lang</span>
+                                    <h2>D Struct Language (D--)</h2>
+                                </div>
+                            </div>
+                            <div class="project-detail-body">
+                                <p class="project-description">
+                                    D-- 是一门高性能、简单易学的面向对象编程语言。我们设计这门语言的初衷是让青少年能够轻松理解编程的核心概念，同时不牺牲性能和表达能力。
+                                </p>
+                                <div class="project-features">
+                                    <h4>语言特性</h4>
+                                    <ul>
+                                        <li>简洁直观的语法</li>
+                                        <li>面向对象编程支持</li>
+                                        <li>类型安全与推断</li>
+                                        <li>丰富的标准库</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Rust</span>
+                                    <span class="tech-tag">LLVM</span>
+                                    <span class="tech-tag">Compiler</span>
+                                </div>
+                                <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn btn-primary">
+                                    了解语法
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="project-detail fade-in delay-2">
+                            <div class="project-detail-header">
+                                <div class="project-icon-large">📊</div>
+                                <div class="project-meta">
+                                    <span class="tag tool">Utility</span>
+                                    <h2>FH Clac</h2>
+                                </div>
+                            </div>
+                            <div class="project-detail-body">
+                                <p class="project-description">
+                                    FH Clac 是一个轻量级、高效率的直方图生成器。它能够快速将数据转化为直观的视觉图表，服务于数据分析与教学场景，让数据可视化变得简单。
+                                </p>
+                                <div class="project-features">
+                                    <h4>功能特点</h4>
+                                    <ul>
+                                        <li>快速数据处理</li>
+                                        <li>多种图表类型</li>
+                                        <li>导出多种格式</li>
+                                        <li>命令行友好</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">CLI</span>
+                                    <span class="tech-tag">Data Viz</span>
+                                </div>
+                                <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn btn-primary">
+                                    立即使用
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2022-2026 OpenLight Studio. All Rights Reserved.</p>
+                <p class="footer-note">Designed with Light & Code.</p>
+            </div>
+        </footer>
+
+        <script src="../script.js"></script>
+    </body>
+</html>

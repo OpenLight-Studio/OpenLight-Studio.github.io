@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>关于我们 | OpenLight Studio</title>
+        <meta name="description" content="了解 OpenLight Studio 的起源、使命与团队" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>" />
+    </head>
+    <body>
+        <canvas id="particles-canvas"></canvas>
+
+        <nav class="navbar">
+            <div class="container nav-content">
+                <a href="/" class="logo">OpenLight<span class="dot">.</span></a>
+                <ul class="nav-links">
+                    <li><a href="/pages/about.html" class="active">关于</a></li>
+                    <li><a href="/pages/projects.html">项目</a></li>
+                    <li><a href="/pages/join.html">加入</a></li>
+                    <li>
+                        <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn-gh">GitHub</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu">
+            <a href="/pages/about.html">关于</a>
+            <a href="/pages/projects.html">项目</a>
+            <a href="/pages/join.html">加入</a>
+            <a href="https://github.com/OpenLight-Studio" target="_blank">GitHub</a>
+        </div>
+
+        <main class="page-content">
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="fade-in">关于我们</h1>
+                    <p class="page-subtitle fade-in delay-1">了解 OpenLight Studio 的故事</p>
+                </div>
+            </div>
+
+            <section class="section">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-card fade-in">
+                            <div class="about-icon">📅</div>
+                            <h3>2022.12.01</h3>
+                            <p>
+                                OpenLight Studio 正式成立。这是两个充满激情的团队——<strong>Open 工作室</strong>与<strong>闪电工作室</strong>的历史性合并。我们相信，协作能创造更大的价值。
+                            </p>
+                        </div>
+                        <div class="about-card fade-in delay-1">
+                            <div class="about-icon">🎯</div>
+                            <h3>使命</h3>
+                            <p>
+                                致力于底层技术的探索与教育普及。从操作系统内核到青少年编程语言，我们试图构建更明亮、更易懂的计算世界。
+                            </p>
+                        </div>
+                        <div class="about-card fade-in delay-2">
+                            <div class="about-icon">💡</div>
+                            <h3>愿景</h3>
+                            <p>
+                                让每一个对计算机科学感兴趣的人都能轻松入门，让复杂的技术变得触手可及。我们用代码照亮前行的道路。
+                            </p>
+                        </div>
+                        <div class="about-card fade-in delay-3">
+                            <div class="about-icon">🌍</div>
+                            <h3>开源精神</h3>
+                            <p>
+                                我们坚信开源的力量。所有项目均以开源形式发布，欢迎全球开发者参与贡献，共同推动技术进步。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section timeline-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>发展历程</h2>
+                        <div class="line"></div>
+                    </div>
+                    <div class="timeline">
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2022.12</span>
+                                <h4>OpenLight Studio 成立</h4>
+                                <p>Open 工作室与闪电工作室合并，开启新篇章</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2023.03</span>
+                                <h4>BrightS 内核启动</h4>
+                                <p>开始自主研发操作系统内核项目</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2024.01</span>
+                                <h4>D-- 语言发布</h4>
+                                <p>面向青少年的编程语言正式发布首个版本</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item fade-in">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">2024.06</span>
+                                <h4>FH Clac 工具上线</h4>
+                                <p>轻量级直方图生成器发布，服务数据分析社区</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2022-2026 OpenLight Studio. All Rights Reserved.</p>
+                <p class="footer-note">Designed with Light & Code.</p>
+            </div>
+        </footer>
+
+        <script src="../script.js"></script>
+    </body>
+</html>

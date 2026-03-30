@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>加入我们 | OpenLight Studio</title>
+        <meta name="description" content="加入 OpenLight Studio，与志同道合的开发者一起创造" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💡</text></svg>" />
+    </head>
+    <body>
+        <canvas id="particles-canvas"></canvas>
+
+        <nav class="navbar">
+            <div class="container nav-content">
+                <a href="/" class="logo">OpenLight<span class="dot">.</span></a>
+                <ul class="nav-links">
+                    <li><a href="/pages/about.html">关于</a></li>
+                    <li><a href="/pages/projects.html">项目</a></li>
+                    <li><a href="/pages/join.html" class="active">加入</a></li>
+                    <li>
+                        <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn-gh">GitHub</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu">
+            <a href="/pages/about.html">关于</a>
+            <a href="/pages/projects.html">项目</a>
+            <a href="/pages/join.html">加入</a>
+            <a href="https://github.com/OpenLight-Studio" target="_blank">GitHub</a>
+        </div>
+
+        <main class="page-content">
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="fade-in">与光同行</h1>
+                    <p class="page-subtitle fade-in delay-1">加入 OpenLight Studio，一起创造未来</p>
+                </div>
+            </div>
+
+            <section class="section">
+                <div class="container">
+                    <div class="join-intro fade-in">
+                        <p>无论你是内核黑客、语言设计爱好者，还是数据可视化专家，这里都有你的位置。我们欢迎所有对技术充满热情的开发者加入。</p>
+                    </div>
+
+                    <div class="roles-grid">
+                        <div class="role-card fade-in">
+                            <div class="role-icon">🔧</div>
+                            <h3>内核开发者</h3>
+                            <p>参与 BrightS 内核的开发，探索操作系统底层技术</p>
+                            <ul class="role-skills">
+                                <li>C / Assembly</li>
+                                <li>操作系统原理</li>
+                                <li>硬件架构</li>
+                            </ul>
+                        </div>
+                        <div class="role-card fade-in delay-1">
+                            <div class="role-icon">📝</div>
+                            <h3>语言设计者</h3>
+                            <p>参与 D-- 语言的设计与实现，创造更好的编程体验</p>
+                            <ul class="role-skills">
+                                <li>编译原理</li>
+                                <li>语言设计</li>
+                                <li>Rust / C++</li>
+                            </ul>
+                        </div>
+                        <div class="role-card fade-in delay-2">
+                            <div class="role-icon">📈</div>
+                            <h3>工具开发者</h3>
+                            <p>参与 FH Clac 等工具的开发，提升数据可视化体验</p>
+                            <ul class="role-skills">
+                                <li>Python</li>
+                                <li>数据可视化</li>
+                                <li>CLI 开发</li>
+                            </ul>
+                        </div>
+                        <div class="role-card fade-in delay-3">
+                            <div class="role-icon">📚</div>
+                            <h3>文档贡献者</h3>
+                            <p>帮助完善项目文档，让更多人了解和使用我们的项目</p>
+                            <ul class="role-skills">
+                                <li>技术写作</li>
+                                <li>Markdown</li>
+                                <li>翻译能力</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="join-cta fade-in">
+                        <h2>准备好加入了吗？</h2>
+                        <p>选择你最喜欢的方式联系我们</p>
+                        <div class="join-actions">
+                            <a href="https://qm.qq.com/q/CR5pnbgOUo" target="_blank" class="btn btn-qq">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                加入 QQ 群
+                            </a>
+                            <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn btn-gh-dark">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                                GitHub Organization
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2022-2026 OpenLight Studio. All Rights Reserved.</p>
+                <p class="footer-note">Designed with Light & Code.</p>
+            </div>
+        </footer>
+
+        <script src="../script.js"></script>
+    </body>
+</html>
