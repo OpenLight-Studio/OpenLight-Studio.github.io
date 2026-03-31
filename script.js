@@ -254,26 +254,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("theme-toggle");
   const html = document.documentElement;
 
-  // 从本地存储加载主题
+  // 从本地存储加载主题（默认日间模式）
   const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "light") {
+  if (savedTheme === "dark") {
+    html.classList.add("dark-theme");
+  } else {
+    // 默认日间模式
     html.classList.add("light-theme");
-  }
-
-  // 检测系统偏好
-  if (!savedTheme) {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (!prefersDark) {
-      html.classList.add("light-theme");
-    }
   }
 
   // 切换主题
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      html.classList.toggle("light-theme");
       const isLight = html.classList.contains("light-theme");
-      localStorage.setItem("theme", isLight ? "light" : "dark");
+      if (isLight) {
+        html.classList.remove("light-theme");
+        html.classList.add("dark-theme");
+        localStorage.setItem("theme", "dark");
+      } else {
+        html.classList.remove("dark-theme");
+        html.classList.add("light-theme");
+        localStorage.setItem("theme", "light");
+      }
     });
   }
 });
