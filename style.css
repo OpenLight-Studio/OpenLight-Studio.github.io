@@ -16,6 +16,29 @@
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15);
     --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --border-color: var(--border-color);
+    --nav-bg: rgba(10, 10, 15, 0.7);
+    --nav-scrolled-bg: rgba(10, 10, 15, 0.95);
+}
+
+/* --- 日间模式 --- */
+.light-theme {
+    --bg-color: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-card: rgba(0, 0, 0, 0.02);
+    --text-main: #4a5568;
+    --text-highlight: #0891b2;
+    --text-accent: #7c3aed;
+    --text-white: #1a202c;
+    --accent-glow: rgba(8, 145, 178, 0.15);
+    --accent-purple: rgba(124, 58, 237, 0.2);
+    --gradient-primary: linear-gradient(135deg, #0891b2 0%, #7c3aed 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.4) 100%);
+    --shadow-glow: 0 0 40px rgba(8, 145, 178, 0.1);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --nav-bg: rgba(248, 249, 250, 0.8);
+    --nav-scrolled-bg: rgba(255, 255, 255, 0.95);
 }
 
 /* --- 全局重置 --- */
@@ -70,17 +93,17 @@ ul {
     top: 0;
     width: 100%;
     padding: 16px 0;
-    background: rgba(10, 10, 15, 0.7);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 .navbar.scrolled {
-    background: rgba(10, 10, 15, 0.95);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    background: var(--nav-scrolled-bg);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 
 .nav-content {
@@ -160,6 +183,47 @@ ul {
     display: none !important;
 }
 
+/* --- 主题切换按钮 --- */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    color: var(--text-main);
+}
+
+.theme-toggle:hover {
+    border-color: var(--text-highlight);
+    color: var(--text-highlight);
+    background: var(--accent-glow);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.theme-toggle .sun-icon {
+    display: none;
+}
+
+.theme-toggle .moon-icon {
+    display: block;
+}
+
+.light-theme .theme-toggle .sun-icon {
+    display: block;
+}
+
+.light-theme .theme-toggle .moon-icon {
+    display: none;
+}
+
 .hamburger {
     display: none;
     cursor: pointer;
@@ -198,7 +262,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(10, 10, 15, 0.98);
+    background: var(--nav-scrolled-bg);
     backdrop-filter: blur(20px);
     z-index: 999;
     flex-direction: column;
@@ -480,7 +544,7 @@ ul {
     -webkit-backdrop-filter: blur(20px);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -543,7 +607,7 @@ ul {
     border-radius: 24px;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
@@ -735,9 +799,10 @@ ul {
 footer {
     padding: 48px 0;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-top: 1px solid var(--border-color);
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--text-main);
+    opacity: 0.6;
 }
 
 .footer-note {
@@ -887,7 +952,7 @@ footer {
 
 /* --- 选中文本样式 --- */
 ::selection {
-    background: rgba(0, 212, 255, 0.3);
+    background: var(--accent-glow);
     color: var(--text-white);
 }
 
@@ -901,12 +966,21 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(128, 128, 128, 0.3);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(128, 128, 128, 0.5);
+}
+
+/* 日间模式滚动条 */
+.light-theme ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
 
 /* --- 页面内容布局 --- */
@@ -974,7 +1048,7 @@ footer {
     -webkit-backdrop-filter: blur(20px);
     padding: 40px;
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
     display: block;
     position: relative;
@@ -1092,7 +1166,7 @@ footer {
     -webkit-backdrop-filter: blur(20px);
     padding: 24px 32px;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
@@ -1134,7 +1208,7 @@ footer {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
     overflow: hidden;
     transition: var(--transition);
 }
@@ -1237,7 +1311,7 @@ footer {
     color: var(--text-main);
     padding: 6px 12px;
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
 }
 
@@ -1277,7 +1351,7 @@ footer {
     -webkit-backdrop-filter: blur(20px);
     padding: 32px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
@@ -1349,7 +1423,7 @@ footer {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
 }
@@ -1443,7 +1517,7 @@ footer {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
     overflow: hidden;
     transition: var(--transition);
     position: relative;

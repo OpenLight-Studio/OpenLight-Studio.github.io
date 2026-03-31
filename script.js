@@ -249,4 +249,31 @@ document.addEventListener("DOMContentLoaded", () => {
       cursorGlow.style.opacity = "0";
     }, 3000);
   });
+
+  // === 主题切换 ===
+  const themeToggle = document.getElementById("theme-toggle");
+  const html = document.documentElement;
+
+  // 从本地存储加载主题
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    html.classList.add("light-theme");
+  }
+
+  // 检测系统偏好
+  if (!savedTheme) {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (!prefersDark) {
+      html.classList.add("light-theme");
+    }
+  }
+
+  // 切换主题
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      html.classList.toggle("light-theme");
+      const isLight = html.classList.contains("light-theme");
+      localStorage.setItem("theme", isLight ? "light" : "dark");
+    });
+  }
 });
