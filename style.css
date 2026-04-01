@@ -1808,3 +1808,324 @@ footer {
 .light-theme .cursor-glow {
     background: radial-gradient(circle, rgba(14, 116, 144, 0.03) 0%, transparent 70%);
 }
+
+/* --- 首页统计卡片 --- */
+.stats-section-home {
+    padding: 80px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 40px 20px;
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--text-highlight);
+}
+
+.stat-card .stat-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-card .stat-label {
+    font-size: 1rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+/* --- 技术栈区域 --- */
+.tech-section {
+    background: linear-gradient(180deg, transparent 0%, var(--bg-secondary) 50%, transparent 100%);
+    position: relative;
+}
+
+.section-desc {
+    color: var(--text-main);
+    margin-top: 12px;
+    font-size: 1rem;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+.tech-item {
+    text-align: center;
+    padding: 32px 16px;
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.tech-item:hover {
+    transform: translateY(-6px);
+    border-color: var(--text-highlight);
+    box-shadow: var(--shadow-glow);
+}
+
+.tech-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.tech-item h4 {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.tech-item p {
+    color: var(--text-main);
+    font-size: 0.85rem;
+}
+
+/* --- CTA 区域 --- */
+.cta-section {
+    padding: 100px 0;
+}
+
+.cta-content {
+    text-align: center;
+    padding: 60px;
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-content::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    color: var(--text-white);
+    margin-bottom: 16px;
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-content > p {
+    color: var(--text-main);
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- 装饰性网格背景 --- */
+.section-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* --- 响应式更新 --- */
+@media (max-width: 1024px) {
+    .tech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .stat-card {
+        padding: 30px 16px;
+    }
+    
+    .stat-card .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .cta-content {
+        padding: 40px 24px;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- 装饰性分隔线 --- */
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    margin: 0;
+}
+
+/* --- 浮动装饰元素 --- */
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.floating-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.floating-shapes .shape-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--gradient-primary);
+    top: 10%;
+    left: -5%;
+    animation: float1 20s ease-in-out infinite;
+}
+
+.floating-shapes .shape-2 {
+    width: 200px;
+    height: 200px;
+    background: var(--text-accent);
+    bottom: 20%;
+    right: -3%;
+    animation: float2 25s ease-in-out infinite;
+}
+
+/* --- 核心价值区域 --- */
+.values-section {
+    background: linear-gradient(180deg, transparent 0%, var(--bg-secondary) 50%, transparent 100%);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.value-item {
+    text-align: center;
+    padding: 40px 24px;
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.value-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--text-highlight);
+    box-shadow: var(--shadow-glow);
+}
+
+.value-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.value-item h4 {
+    color: var(--text-white);
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.value-item p {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}

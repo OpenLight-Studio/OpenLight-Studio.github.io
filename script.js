@@ -223,6 +223,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // === 数字计数动画 ===
+  const statNumbers = document.querySelectorAll(".stat-card .stat-number");
+  if (statNumbers.length > 0) {
+    const countObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = parseInt(entry.target.dataset.target) || 0;
+            let current = 0;
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                current = target;
+                clearInterval(timer);
+              }
+              entry.target.textContent = Math.floor(current);
+            }, 16);
+            
+            countObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    statNumbers.forEach((el) => countObserver.observe(el));
+  }
+
   // === 鼠标跟随光效 ===
   const cursorGlow = document.createElement("div");
   cursorGlow.style.cssText = `
