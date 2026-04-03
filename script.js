@@ -1,27 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === 加载屏幕 ===
-  const loadingScreen = document.querySelector(".loading-screen");
-  if (loadingScreen) {
-    const hideLoading = () => {
-      if (!loadingScreen.classList.contains("hidden")) {
-        loadingScreen.classList.add("hidden");
-        document.body.style.overflow = "";
-      }
-    };
-
-    // 不依赖 window.load，直接 1.5 秒后关闭
-    setTimeout(hideLoading, 1500);
-
-    document.body.style.overflow = "hidden";
-  }
-    };
-
-    // 不依赖 window.load，直接 1.5 秒后关闭
-    setTimeout(hideLoading, 1500);
-
-    document.body.style.overflow = "hidden";
-  }
-
   // === 粒子背景 ===
   const canvas = document.getElementById("particles-canvas");
   if (canvas) {
