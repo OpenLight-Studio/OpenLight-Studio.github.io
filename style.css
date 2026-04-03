@@ -1,48 +1,8 @@
 /* --- 本地字体 --- */
 @font-face {
     font-family: "MiSans";
-    src: url("assets/fonts/MiSans/MiSans/woff2/MiSans-Regular.woff2") format("woff2");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "MiSans";
-    src: url("assets/fonts/MiSans/MiSans/woff2/MiSans-Medium.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "MiSans";
-    src: url("assets/fonts/MiSans/MiSans/woff2/MiSans-Semibold.woff2") format("woff2");
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "MiSans";
-    src: url("assets/fonts/MiSans/MiSans/woff2/MiSans-Bold.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "MiSans";
-    src: url("assets/fonts/MiSans/MiSans/woff2/MiSans-Heavy.woff2") format("woff2");
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "MiSans";
-    src: url("assets/fonts/MiSans/MiSans/woff2/MiSans-Light.woff2") format("woff2");
-    font-weight: 300;
+    src: url("assets/fonts/MiSans/MiSans/woff2/MiSans-Demibold.woff2") format("woff2");
+    font-weight: 100 900;
     font-style: normal;
     font-display: swap;
 }
@@ -72,7 +32,7 @@
                      radial-gradient(at 80% 0%, rgba(124, 58, 237, 0.06) 0%, transparent 50%),
                      radial-gradient(at 0% 50%, rgba(0, 212, 255, 0.04) 0%, transparent 50%),
                      radial-gradient(at 80% 100%, rgba(124, 58, 237, 0.08) 0%, transparent 50%);
-    --font-main: "MiSans", "Nunito", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+    --font-main: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
     --font-code: "JetBrains Mono", monospace;
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     --transition-fast: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
