@@ -23,22 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.body.style.overflow = "hidden";
   }
-    };
-
-    window.addEventListener("load", () => {
-      setTimeout(hideLoading, 1600);
-    });
-
-    // 防止缓存或资源阻塞导致 load 事件未触发
-    if (document.readyState === "complete") {
-      setTimeout(hideLoading, 100);
-    }
-
-    // 兜底强制关闭 (5秒)，避免字体加载失败导致永久卡死
-    setTimeout(hideLoading, 5000);
-
-    document.body.style.overflow = "hidden";
-  }
 
   // === 粒子背景 ===
   const canvas = document.getElementById("particles-canvas");
