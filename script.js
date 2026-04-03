@@ -2,12 +2,41 @@ document.addEventListener("DOMContentLoaded", () => {
   // === 加载屏幕 ===
   const loadingScreen = document.querySelector(".loading-screen");
   if (loadingScreen) {
-    window.addEventListener("load", () => {
-      setTimeout(() => {
+    const hideLoading = () => {
+      if (!loadingScreen.classList.contains("hidden")) {
         loadingScreen.classList.add("hidden");
         document.body.style.overflow = "";
-      }, 1600);
+      }
+    };
+
+    window.addEventListener("load", () => {
+      setTimeout(hideLoading, 1600);
     });
+
+    // 防止缓存或资源阻塞导致 load 事件未触发
+    if (document.readyState === "complete") {
+      setTimeout(hideLoading, 100);
+    }
+
+    // 兜底强制关闭 (5秒)，避免字体加载失败导致永久卡死
+    setTimeout(hideLoading, 5000);
+
+    document.body.style.overflow = "hidden";
+  }
+    };
+
+    window.addEventListener("load", () => {
+      setTimeout(hideLoading, 1600);
+    });
+
+    // 防止缓存或资源阻塞导致 load 事件未触发
+    if (document.readyState === "complete") {
+      setTimeout(hideLoading, 100);
+    }
+
+    // 兜底强制关闭 (5秒)，避免字体加载失败导致永久卡死
+    setTimeout(hideLoading, 5000);
+
     document.body.style.overflow = "hidden";
   }
 
