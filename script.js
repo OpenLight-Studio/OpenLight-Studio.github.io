@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // === 加载屏幕 ===
+  const loadingScreen = document.querySelector(".loading-screen");
+  if (loadingScreen) {
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        loadingScreen.classList.add("hidden");
+        document.body.style.overflow = "";
+      }, 1600);
+    });
+    document.body.style.overflow = "hidden";
+  }
+
   // === 粒子背景 ===
   const canvas = document.getElementById("particles-canvas");
   if (canvas) {
@@ -170,12 +182,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // === 导航栏滚动效果 ===
   const navbar = document.querySelector(".navbar");
   if (navbar) {
+    let lastScrollY = 0;
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 50) {
         navbar.classList.add("scrolled");
       } else {
         navbar.classList.remove("scrolled");
       }
+      lastScrollY = currentScrollY;
     });
   }
 
@@ -256,6 +271,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // === 鼠标跟随光效 ===
   const cursorGlow = document.createElement("div");
+  cursorGlow.className = "cursor-glow";
   cursorGlow.style.cssText = `
     position: fixed;
     width: 400px;
@@ -285,16 +301,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("theme-toggle");
   const html = document.documentElement;
 
-  // 从本地存储加载主题（默认日间模式）
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     html.classList.add("dark-theme");
   } else {
-    // 默认日间模式
     html.classList.add("light-theme");
   }
 
-  // 切换主题
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
       const isLight = html.classList.contains("light-theme");
@@ -307,6 +320,124 @@ document.addEventListener("DOMContentLoaded", () => {
         html.classList.add("light-theme");
         localStorage.setItem("theme", "light");
       }
+    });
+  }
+
+  // === 回到顶部按钮 ===
+  const scrollToTopBtn = document.querySelector(".scroll-to-top");
+  if (scrollToTopBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        scrollToTopBtn.classList.add("visible");
+      } else {
+        scrollToTopBtn.classList.remove("visible");
+      }
+    });
+
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
+
+  // === 3D 卡片倾斜效果 ===
+  const cards = document.querySelectorAll(
+    ".preview-card, .about-card, .project-card, .stat-card, .tech-item, .value-item, .role-card, .member-card"
+  );
+
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / 20;
+      const rotateY = (centerX - x) / 20;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+
+      // 更新卡片光晕位置
+      const glow = card.querySelector(".card-glow");
+      if (glow) {
+        const percentX = (x / rect.width) * 100;
+        const percentY = (y / rect.height) * 100;
+        glow.style.setProperty("--glow-x", `-${100 - percentX}%`);
+        glow.style.setProperty("--glow-y", `-${100 - percentY}%`);
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+
+  // === 卡片点击涟漪效果 ===
+  const interactiveCards = document.querySelectorAll(
+    ".preview-card, .btn, .btn-primary, .btn-outline, .btn-gh, .btn-qq, .btn-gh-dark, .btn-afdian"
+  );
+
+  interactiveCards.forEach((element) => {
+    element.addEventListener("click", function (e) {
+      const ripple = document.createElement("span");
+      ripple.className = "ripple";
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.width = ripple.style.height = size + "px";
+      ripple.style.left = e.clientX - rect.left - size / 2 + "px";
+      ripple.style.top = e.clientY - rect.top - size / 2 + "px";
+      this.style.position = "relative";
+      this.style.overflow = "hidden";
+      this.appendChild(ripple);
+
+      ripple.addEventListener("animationend", () => {
+        ripple.remove();
+      });
+    });
+  });
+
+  // === 页面进入动画 ===
+  document.body.classList.add("page-transition");
+
+  // === 滚动指示器点击 ===
+  const scrollIndicator = document.querySelector(".scroll-indicator");
+  if (scrollIndicator) {
+    scrollIndicator.addEventListener("click", () => {
+      const nextSection = document.querySelector(".preview-section");
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+
+  // === 滚动进度指示器 ===
+  const scrollProgress = document.getElementById("scroll-progress");
+  if (scrollProgress) {
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+      scrollProgress.style.transform = `scaleX(${scrollPercent})`;
+    });
+  }
+});
+  }
+
+  // === 滚动进度指示器 ===
+  const scrollProgress = document.getElementById("scroll-progress");
+  if (scrollProgress) {
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+      scrollProgress.style.transform = `scaleX(${scrollPercent})`;
     });
   }
 });
