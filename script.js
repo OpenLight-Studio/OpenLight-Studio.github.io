@@ -404,28 +404,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
-  // === 滚动进度指示器 ===
-  const scrollProgress = document.getElementById("scroll-progress");
-  if (scrollProgress) {
-    window.addEventListener("scroll", () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = scrollTop / docHeight;
-      scrollProgress.style.transform = `scaleX(${scrollPercent})`;
-    });
-  }
 });
   }
-
-  // === 滚动进度指示器 ===
-  const scrollProgress = document.getElementById("scroll-progress");
-  if (scrollProgress) {
-    window.addEventListener("scroll", () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = scrollTop / docHeight;
-      scrollProgress.style.transform = `scaleX(${scrollPercent})`;
-    });
+});
   }
 });
