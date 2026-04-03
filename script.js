@@ -9,17 +9,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    window.addEventListener("load", () => {
-      setTimeout(hideLoading, 1600);
-    });
+    // 不依赖 window.load，直接 1.5 秒后关闭
+    setTimeout(hideLoading, 1500);
 
-    // 防止缓存或资源阻塞导致 load 事件未触发
-    if (document.readyState === "complete") {
-      setTimeout(hideLoading, 100);
-    }
+    document.body.style.overflow = "hidden";
+  }
+    };
 
-    // 兜底强制关闭 (5秒)，避免字体加载失败导致永久卡死
-    setTimeout(hideLoading, 5000);
+    // 不依赖 window.load，直接 1.5 秒后关闭
+    setTimeout(hideLoading, 1500);
 
     document.body.style.overflow = "hidden";
   }
