@@ -170,15 +170,12 @@ document.addEventListener("DOMContentLoaded", () => {
   // === 导航栏滚动效果 ===
   const navbar = document.querySelector(".navbar");
   if (navbar) {
-    let lastScrollY = 0;
     window.addEventListener("scroll", () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > 50) {
+      if (window.scrollY > 50) {
         navbar.classList.add("scrolled");
       } else {
         navbar.classList.remove("scrolled");
       }
-      lastScrollY = currentScrollY;
     });
   }
 
@@ -222,8 +219,9 @@ document.addEventListener("DOMContentLoaded", () => {
           top: offsetPosition,
           behavior: "smooth",
         });
-  }
-});
+      }
+    });
+  });
 
   // === 数字计数动画 ===
   const statNumbers = document.querySelectorAll(".stat-card .stat-number");
@@ -236,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let current = 0;
             const duration = 2000;
             const increment = target / (duration / 16);
-            
+
             const timer = setInterval(() => {
               current += increment;
               if (current >= target) {
@@ -245,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
               }
               entry.target.textContent = Math.floor(current);
             }, 16);
-            
+
             countObserver.unobserve(entry.target);
           }
         });
@@ -346,7 +344,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
 
-      // 更新卡片光晕位置
       const glow = card.querySelector(".card-glow");
       if (glow) {
         const percentX = (x / rect.width) * 100;
