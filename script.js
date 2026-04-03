@@ -222,9 +222,8 @@ document.addEventListener("DOMContentLoaded", () => {
           top: offsetPosition,
           behavior: "smooth",
         });
-      }
-    });
-  });
+  }
+});
 
   // === 数字计数动画 ===
   const statNumbers = document.querySelectorAll(".stat-card .stat-number");
@@ -362,11 +361,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "";
-    });
-  });
-
   // === 卡片点击涟漪效果 ===
   const interactiveCards = document.querySelectorAll(
     ".preview-card, .btn, .btn-primary, .btn-outline, .btn-gh, .btn-qq, .btn-gh-dark, .btn-afdian"
@@ -403,9 +397,5 @@ document.addEventListener("DOMContentLoaded", () => {
         nextSection.scrollIntoView({ behavior: "smooth" });
       }
     });
-  }
-});
-  }
-});
   }
 });
