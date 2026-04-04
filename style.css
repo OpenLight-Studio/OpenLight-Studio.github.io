@@ -669,11 +669,21 @@ ul {
     text-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
     position: relative;
     animation: heroTitleGlow 4s ease-in-out infinite;
+    background: linear-gradient(to right, var(--text-white), var(--text-highlight));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 @keyframes heroTitleGlow {
-    0%, 100% { text-shadow: 0 0 40px rgba(0, 212, 255, 0.1); }
-    50% { text-shadow: 0 0 60px rgba(0, 212, 255, 0.2), 0 0 80px rgba(124, 58, 237, 0.1); }
+    0%, 100% { 
+        text-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
+        filter: brightness(1);
+    }
+    50% { 
+        text-shadow: 0 0 60px rgba(0, 212, 255, 0.2), 0 0 80px rgba(124, 58, 237, 0.1);
+        filter: brightness(1.1);
+    }
 }
 
 @keyframes heroTitleGlow {
@@ -1523,7 +1533,7 @@ footer::after {
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transition: opacity 1.2s cubic-bezier(0.25, 0.8, 0.25, 1), transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .fade-in.visible {
@@ -1629,6 +1639,32 @@ footer::after {
     .stat-number {
         font-size: 2.2rem;
     }
+    
+    /* Enhanced responsive adjustments */
+    .hero-bg .orb-1,
+    .hero-bg .orb-2,
+    .hero-bg .orb-3 {
+        filter: blur(60px);
+    }
+    
+    .page-header .header-decoration::before,
+    .page-header .header-decoration::after {
+        opacity: 0.06;
+    }
+    
+    .floating-shapes .shape-1 {
+        width: 250px;
+        height: 250px;
+        top: 0;
+        left: -15%;
+    }
+    
+    .floating-shapes .shape-2 {
+        width: 180px;
+        height: 180px;
+        bottom: 10%;
+        right: -10%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1650,6 +1686,28 @@ footer::after {
 
     .join-content h2 {
         font-size: 2rem;
+    }
+    
+    /* Further enhanced mobile adjustments */
+    .hero-bg {
+        background: 
+            radial-gradient(circle at 30% 40%, rgba(0, 212, 255, 0.06) 0%, transparent 50%),
+            radial-gradient(circle at 70% 60%, rgba(124, 58, 237, 0.06) 0%, transparent 50%);
+    }
+    
+    .hero-bg .orb-1,
+    .hero-bg .orb-2,
+    .hero-bg .orb-3 {
+        display: none;
+    }
+    
+    .page-header .header-decoration::before,
+    .page-header .header-decoration::after {
+        display: none;
+    }
+    
+    .floating-shapes {
+        display: none;
     }
 }
 
@@ -1702,10 +1760,20 @@ footer::after {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(ellipse at 20% 50%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(124, 58, 237, 0.03) 0%, transparent 50%);
+        radial-gradient(ellipse at 20% 50%, rgba(0, 212, 255, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(124, 58, 237, 0.04) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
+    animation: bgGradientShift 20s ease infinite;
+}
+
+@keyframes bgGradientShift {
+    0%, 100% {
+        background-position: 0% 0%, 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%, 100% 100%;
+    }
 }
 
 .page-header {
