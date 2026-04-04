@@ -805,33 +805,45 @@ ul {
     background: var(--gradient-primary);
     color: var(--bg-color);
     border: none;
-    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3), 0 0 0 0 rgba(0, 212, 255, 0);
     position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    font-weight: 600;
 }
 
-.btn-primary::after {
+.btn-primary::before {
     content: '';
     position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    background: var(--gradient-primary);
-    z-index: -1;
-    opacity: 0;
-    filter: blur(12px);
-    transition: opacity 0.3s ease;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: 0 8px 30px rgba(0, 212, 255, 0.45), 0 0 20px rgba(0, 212, 255, 0.15);
 }
 
-.btn-primary:hover::after {
-    opacity: 0.4;
+.btn-primary:active {
+    transform: translateY(-1px) scale(1.01);
 }
 
-.btn-primary:active {
-    transform: translateY(-1px);
+.btn-primary svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover svg {
+    transform: rotate(-5deg) scale(1.1);
 }
 
 .btn-primary::after {
@@ -864,17 +876,47 @@ ul {
     color: var(--text-white);
     border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-outline:hover::before {
+    left: 100%;
 }
 
 .btn-outline:hover {
     border-color: rgba(255, 255, 255, 0.4);
     background: rgba(255, 255, 255, 0.05);
-    transform: translateY(-3px);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .btn-outline:active {
-    transform: translateY(-1px);
+    transform: translateY(-1px) scale(1.01);
+}
+
+.btn-outline svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-outline:hover svg {
+    transform: rotate(-5deg) scale(1.1);
 }
 
 .scroll-indicator {
@@ -1311,12 +1353,46 @@ ul {
     color: white;
     border: none;
     box-shadow: 0 4px 20px rgba(18, 183, 245, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.btn-qq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-qq:hover::before {
+    left: 100%;
 }
 
 .btn-qq:hover {
     background: linear-gradient(135deg, #0ea0d8 0%, #0770c2 100%);
     box-shadow: 0 8px 30px rgba(18, 183, 245, 0.4);
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.btn-qq:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+.btn-qq svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-qq:hover svg {
+    transform: rotate(-5deg) scale(1.1);
 }
 
 .btn-gh-dark {
@@ -3193,6 +3269,21 @@ footer::after {
 
 .light-theme .btn-gh svg {
     fill: #0e7490;
+}
+
+.light-theme .btn-primary {
+    background: var(--gradient-primary);
+    color: var(--bg-color);
+}
+
+.light-theme .btn-outline {
+    border-color: rgba(0, 0, 0, 0.15);
+    color: #111827;
+}
+
+.light-theme .btn-outline:hover {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.3);
 }
 
 .light-theme .btn-gh:hover {
