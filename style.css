@@ -346,17 +346,17 @@ ul {
 
 .btn-gh {
     border: 1px solid rgba(0, 212, 255, 0.3);
-    padding: 6px 12px;
-    border-radius: 6px;
+    padding: 5px 10px;
+    border-radius: 5px;
     color: var(--text-highlight) !important;
     background: rgba(0, 212, 255, 0.05);
     font-weight: 500;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     position: relative;
     overflow: hidden;
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
     transition: var(--transition);
 }
 
@@ -387,8 +387,8 @@ ul {
 }
 
 .btn-gh svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     transition: transform 0.3s ease;
 }
 
