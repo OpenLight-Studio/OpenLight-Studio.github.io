@@ -902,6 +902,65 @@ ul {
     font-weight: 600;
 }
 
+.btn-afdian {
+    background: transparent;
+    color: var(--text-accent);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.btn-afdian::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-afdian:hover::before {
+    left: 100%;
+}
+
+.btn-afdian:hover {
+    border-color: rgba(124, 58, 237, 0.5);
+    background: rgba(124, 58, 237, 0.05);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2);
+}
+
+.btn-afdian:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+.btn-afdian svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-afdian:hover svg {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+/* Light theme adjustments for Afdian button */
+.light-theme .btn-afdian {
+    color: #6d28d9;
+    border-color: rgba(109, 40, 217, 0.3);
+}
+
+.light-theme .btn-afdian:hover {
+    background: rgba(109, 40, 217, 0.05);
+    border-color: rgba(109, 40, 217, 0.3);
+}
+
 .btn-outline::before {
     content: '';
     position: absolute;
