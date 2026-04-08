@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>核心项目 | OpenLight Studio</title>
-        <meta name="description" content="探索 OpenLight Studio 的核心项目：BrightS 内核、D-- 语言、FH Clac" />
+        <meta name="description" content="探索 OpenLight Studio 的核心项目：BrightS OS、D-- 编程语言、Frequency Histogram Clac" />
         <link rel="stylesheet" href="../style.css" />
         <link rel="icon" href="../assets/Pictures/OpenLight Logo.png" />
     </head>
@@ -100,28 +100,29 @@
                                 <div class="project-icon-large">⚡</div>
                                 <div class="project-meta">
                                     <span class="tag kernel">OS Kernel</span>
-                                    <h2>BrightS</h2>
+                                    <h2>BrightS OS</h2>
                                     <span class="project-license">GPL-2.0</span>
                                 </div>
                             </div>
                             <div class="project-detail-body">
                                 <p class="project-description">
-                                    BrightS 是一个基于 UNIX V6 设计理念的 x86_64 UEFI 内核。核心设计追求简单、可检查、可理解，支持物理机和 QEMU 下的 UEFI 启动。
+                                    BrightS 是一个跨平台系统内核，基于 UNIX V6 设计理念的现代 x86_64 UEFI 内核。核心设计追求简单、可检查、可理解，支持物理机和 QEMU 下的 UEFI 启动。
                                 </p>
                                 <div class="project-features">
                                     <h4>当前状态</h4>
                                     <ul>
-                                        <li>UEFI 入口和基础平台初始化</li>
-                                        <li>串口控制台输出 (QEMU -serial stdio)</li>
-                                        <li>PCI 扫描和存储探测 (NVMe/AHCI/RAM disk)</li>
-                                        <li>Btrfs 文件系统挂载</li>
-                                        <li>交互式 Shell (guest$ / root#)</li>
+                                        <li>✅ UEFI 入口和基础平台初始化</li>
+                                        <li>✅ 串口控制台输出 (QEMU -serial stdio)</li>
+                                        <li>✅ PCI 扫描和存储探测 (NVMe/AHCI/RAM disk)</li>
+                                        <li>✅ Btrfs 文件系统挂载</li>
+                                        <li>✅ 全功能内存文件系统 (RAMFS)</li>
+                                        <li>✅ LightShell 命令行界面</li>
                                     </ul>
                                 </div>
                                 <div class="project-stats">
-                                    <span class="stat-item">21 Commits</span>
-                                    <span class="stat-item">C 66.4%</span>
-                                    <span class="stat-item">Makefile 22.2%</span>
+                                    <span class="stat-item">41 Commits</span>
+                                    <span class="stat-item">C 90.8%</span>
+                                    <span class="stat-item">v0.1.0</span>
                                 </div>
                                 <a href="https://github.com/OpenLight-Studio/BrightS" target="_blank" class="btn btn-primary">
                                     查看源码
@@ -143,24 +144,24 @@
                             </div>
                             <div class="project-detail-body">
                                 <p class="project-description">
-                                    D-- 是一个专门为青少年编写的编程语言。设计由 OpenLight LLC 用心打造，让年轻学习者能够轻松理解编程的核心概念。
+                                    D Substract (D--) 是一个专门为青少年编写的编程语言。设计由 OpenLight LLC 用心打造，让年轻学习者能够轻松理解编程的核心概念。
                                 </p>
                                 <div class="project-features">
-                                    <h4>语言特点</h4>
+                                    <h4>项目特点</h4>
                                     <ul>
-                                        <li>专为青少年设计</li>
-                                        <li>简洁易学的语法</li>
-                                        <li>面向对象编程支持</li>
+                                        <li>专为青少年学习者设计</li>
+                                        <li>简洁易学的编程语法</li>
+                                        <li>由 OpenLight LLC 精心设计</li>
                                         <li>开源 MIT 许可证</li>
                                     </ul>
                                 </div>
                                 <div class="project-stats">
                                     <span class="stat-item">10 Commits</span>
                                     <span class="stat-item">C++ 98.3%</span>
-                                    <span class="stat-item">Makefile 1.7%</span>
+                                    <span class="stat-item">开发中</span>
                                 </div>
                                 <a href="https://github.com/OpenLight-Studio/D-subtract" target="_blank" class="btn btn-primary">
-                                    了解语法
+                                    查看项目
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
                                     </svg>
@@ -179,7 +180,7 @@
                             </div>
                             <div class="project-detail-body">
                                 <p class="project-description">
-                                    一个跨平台的 C++ 工具，可从整数数据生成 ASCII 直方图。输入数据，指定分组宽度，即可在终端中获得直观的频次分布图。
+                                    一个跨平台的 C++ 工具，可从整数数据生成 ASCII 直方图。输入你的数据，指定分组宽度，即可在终端中获得直观的频次分布图！
                                 </p>
                                 <div class="project-features">
                                     <h4>功能特点</h4>
@@ -188,6 +189,7 @@
                                         <li>自动按指定宽度分组统计</li>
                                         <li>ASCII 可视化输出</li>
                                         <li>跨平台支持 (Linux/macOS/Windows)</li>
+                                        <li>一键编译，无额外依赖</li>
                                     </ul>
                                 </div>
                                 <div class="project-stats">

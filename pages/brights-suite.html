@@ -110,14 +110,19 @@
                             </div>
                             <div class="project-detail-body">
                                 <p class="project-description">
-                                    基于 UNIX V6 设计理念的 x86_64 单体内核。
-                                    提供内存管理、进程调度、文件系统、设备驱动与系统调用接口。
+                                    基于 UNIX V6 设计理念的现代 x86_64 UEFI 内核。核心设计追求简单、可检查、可理解，支持物理机和 QEMU 下的 UEFI 启动。
                                 </p>
                                 <div class="project-stats">
-                                    <span class="stat-item">活跃开发</span>
-                                    <span class="stat-item">C 语言实现</span>
-                                    <span class="stat-item">UEFI 原生支持</span>
+                                    <span class="stat-item">41 Commits</span>
+                                    <span class="stat-item">C 90.8%</span>
+                                    <span class="stat-item">v0.1.0</span>
                                 </div>
+                                <a href="https://github.com/OpenLight-Studio/BrightS" target="_blank" class="btn btn-primary">
+                                    查看内核源码
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                                    </svg>
+                                </a>
                             </div>
                         </article>
 
@@ -216,12 +221,23 @@
                         </div>
                         <div class="project-detail-body">
                             <div class="project-features">
+                                <h4>已完成特性</h4>
                                 <ul>
-                                    <li><strong>阶段 1:</strong> 内核基础架构、内存管理、进程调度</li>
-                                    <li><strong>阶段 2:</strong> 存储栈、文件系统、设备驱动框架</li>
-                                    <li><strong>阶段 3:</strong> 系统调用接口、libc 移植、用户空间引导</li>
-                                    <li><strong>阶段 4:</strong> 网络栈、图形子系统、多处理器支持</li>
-                                    <li><strong>阶段 5:</strong> 应用程序生态、桌面环境、软件包管理</li>
+                                    <li>✅ UEFI 入口和基础平台初始化</li>
+                                    <li>✅ 串口控制台输出 (QEMU -serial stdio)</li>
+                                    <li>✅ PCI 扫描和存储探测 (NVMe/AHCI/RAM disk)</li>
+                                    <li>✅ Btrfs 文件系统挂载</li>
+                                    <li>✅ 全功能内存文件系统 (RAMFS)</li>
+                                    <li>✅ LightShell 命令行界面</li>
+                                </ul>
+
+                                <h4>开发路线图</h4>
+                                <ul>
+                                    <li><strong>当前:</strong> 补齐剩余核心 stub（proc/sched/sleep/signal/kmalloc/clock）</li>
+                                    <li><strong>下一步:</strong> 扩展 VFS 和设备 inode 路径</li>
+                                    <li><strong>未来:</strong> 增加可重复执行的启动和运行时测试</li>
+                                    <li><strong>长期:</strong> 网络栈、图形子系统、多处理器支持</li>
+                                    <li><strong>愿景:</strong> 完整的操作系统生态与软件包管理</li>
                                 </ul>
                             </div>
 
