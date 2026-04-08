@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BrightS System Suite | OpenLight Studio</title>
+        <meta name="description" content="BrightS System Suite - 完整操作系统软件计划，包括内核、工具链、用户空间环境与系统组件" />
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="icon" href="../assets/Pictures/OpenLight Logo.png" />
+    </head>
+    <body>
+        <canvas id="particles-canvas"></canvas>
+
+        <nav class="navbar">
+            <div class="container nav-content">
+                <a href="/" class="logo">OpenLight<span class="dot">.</span></a>
+                <ul class="nav-links">
+                    <li><a href="/pages/about.html">关于</a></li>
+                    <li><a href="/pages/projects.html">项目</a></li>
+                    <li><a href="/pages/members.html">成员</a></li>
+                    <li><a href="/pages/join.html">加入</a></li>
+                    <li>
+                        <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn-gh">GitHub</a>
+                    </li>
+                    <li>
+                        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+                            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu">
+            <a href="/pages/about.html">关于</a>
+            <a href="/pages/projects.html">项目</a>
+            <a href="/pages/members.html">成员</a>
+            <a href="/pages/join.html">加入</a>
+            <a href="https://github.com/OpenLight-Studio" target="_blank">GitHub</a>
+        </div>
+
+        <main class="page-content">
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="fade-in">BrightS System Suite</h1>
+                    <p class="page-subtitle fade-in delay-1">完整的现代操作系统软件计划</p>
+                </div>
+            </div>
+
+            <section class="section">
+                <div class="container">
+                    <div class="project-detail fade-in">
+                        <div class="project-detail-header">
+                            <div class="project-icon-large">🖥️</div>
+                            <div class="project-meta">
+                                <span class="tag kernel">Operating System Suite</span>
+                                <h2>BrightS System Suite</h2>
+                                <span class="project-license">GPL-2.0 / MIT</span>
+                            </div>
+                        </div>
+                        <div class="project-detail-body">
+                            <p class="project-description">
+                                BrightS System Suite 是 OpenLight Studio 主导的完整操作系统软件计划。
+                                这不仅仅是一个内核，而是一套完整的、自包含的操作系统环境，
+                                涵盖从底层引导固件、系统内核、工具链、标准库、用户空间环境到系统应用程序的全部层级。
+                            </p>
+
+                            <div class="project-features">
+                                <h4>项目目标</h4>
+                                <ul>
+                                    <li>构建可审计、可理解的完整操作系统栈</li>
+                                    <li>遵循 UNIX 设计哲学，追求简单与正确性</li>
+                                    <li>支持现代硬件标准与 UEFI 引导环境</li>
+                                    <li>提供完整的开发环境与用户体验</li>
+                                    <li>保持代码可读性与可维护性作为首要设计原则</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-showcase" style="margin-top: 4rem;">
+                        <h3 style="margin-bottom: 2rem;" class="fade-in delay-1">项目构成</h3>
+
+                        <article class="project-detail fade-in delay-1">
+                            <div class="project-detail-header">
+                                <div class="project-icon-large">⚡</div>
+                                <div class="project-meta">
+                                    <span class="tag kernel">Kernel</span>
+                                    <h2>BrightS Kernel</h2>
+                                    <span class="project-license">GPL-2.0</span>
+                                </div>
+                            </div>
+                            <div class="project-detail-body">
+                                <p class="project-description">
+                                    基于 UNIX V6 设计理念的 x86_64 单体内核。
+                                    提供内存管理、进程调度、文件系统、设备驱动与系统调用接口。
+                                </p>
+                                <div class="project-stats">
+                                    <span class="stat-item">活跃开发</span>
+                                    <span class="stat-item">C 语言实现</span>
+                                    <span class="stat-item">UEFI 原生支持</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-detail fade-in delay-2">
+                            <div class="project-detail-header">
+                                <div class="project-icon-large">🔧</div>
+                                <div class="project-meta">
+                                    <span class="tag tool">Toolchain</span>
+                                    <h2>BrightS 工具链</h2>
+                                    <span class="project-license">MIT</span>
+                                </div>
+                            </div>
+                            <div class="project-detail-body">
+                                <p class="project-description">
+                                    针对 BrightS 目标平台的交叉编译工具链，包括 GCC/Clang 编译器端口、
+                                    Binutils、libc 标准库与构建系统。
+                                </p>
+                                <div class="project-stats">
+                                    <span class="stat-item">自举构建</span>
+                                    <span class="stat-item">POSIX 兼容</span>
+                                    <span class="stat-item">原生调试支持</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-detail fade-in">
+                            <div class="project-detail-header">
+                                <div class="project-icon-large">📦</div>
+                                <div class="project-meta">
+                                    <span class="tag tool">Userland</span>
+                                    <h2>用户空间环境</h2>
+                                    <span class="project-license">MIT / BSD</span>
+                                </div>
+                            </div>
+                            <div class="project-detail-body">
+                                <p class="project-description">
+                                    完整的 POSIX 兼容用户空间工具集合，
+                                    包括 Shell 解释器、核心系统工具、文本编辑器、文件管理器与网络组件。
+                                </p>
+                                <div class="project-stats">
+                                    <span class="stat-item">BusyBox 风格设计</span>
+                                    <span class="stat-item">最小依赖</span>
+                                    <span class="stat-item">静态编译支持</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-detail fade-in delay-1">
+                            <div class="project-detail-header">
+                                <div class="project-icon-large">📚</div>
+                                <div class="project-meta">
+                                    <span class="tag tool">Libraries</span>
+                                    <h2>系统库与运行时</h2>
+                                    <span class="project-license">MIT / BSD</span>
+                                </div>
+                            </div>
+                            <div class="project-detail-body">
+                                <p class="project-description">
+                                    标准 C 库实现、系统调用包装层、
+                                    图形接口库、网络栈与通用数据结构库。
+                                </p>
+                                <div class="project-stats">
+                                    <span class="stat-item">libc 实现</span>
+                                    <span class="stat-item">无外部依赖</span>
+                                    <span class="stat-item">文档完善</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-detail fade-in delay-2">
+                            <div class="project-detail-header">
+                                <div class="project-icon-large">📖</div>
+                                <div class="project-meta">
+                                    <span class="tag tool">Documentation</span>
+                                    <h2>设计文档与规范</h2>
+                                    <span class="project-license">CC BY-SA</span>
+                                </div>
+                            </div>
+                            <div class="project-detail-body">
+                                <p class="project-description">
+                                    完整的操作系统设计文档、内核内部结构说明、
+                                    系统调用规范、ABI 定义与开发者指南。
+                                </p>
+                                <div class="project-stats">
+                                    <span class="stat-item">公开评审</span>
+                                    <span class="stat-item">版本控制</span>
+                                    <span class="stat-item">持续更新</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="project-detail fade-in delay-1" style="margin-top: 4rem;">
+                        <div class="project-detail-header">
+                            <h3>技术路线图</h3>
+                        </div>
+                        <div class="project-detail-body">
+                            <div class="project-features">
+                                <ul>
+                                    <li><strong>阶段 1:</strong> 内核基础架构、内存管理、进程调度</li>
+                                    <li><strong>阶段 2:</strong> 存储栈、文件系统、设备驱动框架</li>
+                                    <li><strong>阶段 3:</strong> 系统调用接口、libc 移植、用户空间引导</li>
+                                    <li><strong>阶段 4:</strong> 网络栈、图形子系统、多处理器支持</li>
+                                    <li><strong>阶段 5:</strong> 应用程序生态、桌面环境、软件包管理</li>
+                                </ul>
+                            </div>
+
+                            <div style="margin-top: 2rem;">
+                                <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn btn-primary">
+                                    查看项目组织
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <button class="scroll-to-top" aria-label="回到顶部">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </button>
+
+         <footer>
+             <div class="container">
+                 <p>&copy; 2022-2026 OpenLight Studio. All Rights Reserved.</p>
+                 <p class="footer-links">
+                     <a href="https://github.com/OpenLight-Studio" target="_blank">GitHub</a>
+                     <span class="separator">·</span>
+                     <a href="https://ifdian.net/a/OpenLight" target="_blank" class="btn btn-afdian">爱发电</a>
+                 </p>
+                 <p class="footer-note">Designed with Light & Code.</p>
+             </div>
+         </footer>
+
+        <script src="../script.js"></script>
+    </body>
+</html>
