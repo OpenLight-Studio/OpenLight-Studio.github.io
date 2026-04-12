@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 212, 255, ${this.opacity})`;
+        ctx.fillStyle = `rgba(201, 100, 66, ${this.opacity})`;
         ctx.fill();
       }
     }
@@ -70,15 +70,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < connectionDistance) {
-            const opacity = (1 - dist / connectionDistance) * 0.12;
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(0, 212, 255, ${opacity})`;
-            ctx.lineWidth = 0.5;
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.stroke();
-          }
+            if (dist < connectionDistance) {
+              const opacity = (1 - dist / connectionDistance) * 0.12;
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(201, 100, 66, ${opacity})`;
+              ctx.lineWidth = 0.5;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
         }
       }
     }
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
     position: fixed;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(201, 100, 66, 0.04) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
     transform: translate(-50%, -50%);

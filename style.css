@@ -1529,7 +1529,7 @@ body::before {
     position: fixed;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(201, 100, 66, 0.04) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
     transform: translate(-50%, -50%);
@@ -1539,7 +1539,7 @@ body::before {
 }
 
 .light-theme .cursor-glow {
-    background: radial-gradient(circle, rgba(14, 116, 144, 0.03) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(201, 100, 66, 0.03) 0%, transparent 70%);
 }
 
 /* ===== RIPPLE EFFECT ===== */
