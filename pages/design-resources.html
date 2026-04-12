@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>设计资源 | OpenLight Studio</title>
+        <meta name="description" content="精选的设计系统文档集合，帮助 AI 代理生成一致的 UI" />
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="icon" href="../assets/Pictures/OpenLight Logo.png" />
+    </head>
+    <body>
+        <canvas id="particles-canvas"></canvas>
+
+        <nav class="navbar">
+            <div class="container nav-content">
+                <a href="/" class="logo">OpenLight<span class="dot">.</span></a>
+                <ul class="nav-links">
+                    <li><a href="/pages/about.html">关于</a></li>
+                    <li><a href="/pages/projects.html">项目</a></li>
+                    <li><a href="/pages/members.html">成员</a></li>
+                    <li><a href="/pages/join.html">加入</a></li>
+                    <li><a href="/pages/design-resources.html" class="active">设计资源</a></li>
+                    <li>
+                        <a href="https://github.com/OpenLight-Studio" target="_blank" class="btn-gh">GitHub</a>
+                    </li>
+                    <li>
+                        <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+                            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <div class="mobile-menu">
+            <a href="/pages/about.html">关于</a>
+            <a href="/pages/projects.html">项目</a>
+            <a href="/pages/members.html">成员</a>
+            <a href="/pages/join.html">加入</a>
+            <a href="/pages/design-resources.html">设计资源</a>
+            <a href="https://github.com/OpenLight-Studio" target="_blank">GitHub</a>
+        </div>
+
+        <main class="page-content">
+            <div class="page-header">
+                <div class="container">
+                    <h1 class="fade-in">设计资源</h1>
+                    <p class="page-subtitle fade-in delay-1">精选的设计系统文档，帮助 AI 生成一致的 UI</p>
+                </div>
+            </div>
+
+            <section class="section">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-card fade-in">
+                            <div class="about-icon">🎨</div>
+                            <h3>什么是 DESIGN.md？</h3>
+                            <p>
+                                DESIGN.md 是 Google Stitch 提出的概念，一个纯文本设计系统文档，让 AI 代理能够读取并生成一致的 UI。
+                            </p>
+                        </div>
+                        <div class="about-card fade-in delay-1">
+                            <div class="about-icon">🤖</div>
+                            <h3>AI 友好</h3>
+                            <p>
+                                Markdown 格式最适合大语言模型阅读，无需特殊工具或配置，直接放入项目根目录即可使用。
+                            </p>
+                        </div>
+                        <div class="about-card fade-in delay-2">
+                            <div class="about-icon">📋</div>
+                            <h3>现成模板</h3>
+                            <p>
+                                从知名网站提取的 DESIGN.md 文件，可以直接复制到您的项目中，让 AI 代理生成像素级完美的 UI。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>AI & LLM 平台</h2>
+                        <div class="line"></div>
+                    </div>
+                    <div class="design-grid">
+                        <a href="temp_awesome_design/design-md/x.ai/README.md" class="design-card fade-in">
+                            <h4>xAI</h4>
+                            <p>Elon Musk 的 AI 实验室。极简主义风格，单色调未来感设计</p>
+                        </a>
+                        <a href="temp_awesome_design/design-md/claude/README.md" class="design-card fade-in delay-1">
+                            <h4>Claude</h4>
+                            <p>Anthropic 的 AI 助手。温暖的陶土色调，干净的编辑布局</p>
+                        </a>
+                        <a href="temp_awesome_design/design-md/cohere/README.md" class="design-card fade-in delay-2">
+                            <h4>Cohere</h4>
+                            <p>企业级 AI 平台。鲜艳渐变，数据丰富的仪表板美学</p>
+                        </a>
+                        <a href="temp_awesome_design/design-md/together.ai/README.md" class="design-card fade-in">
+                            <h4>Together AI</h4>
+                            <p>开源 AI 基础设施。技术风格，蓝图式设计</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>开发者工具</h2>
+                        <div class="line"></div>
+                    </div>
+                    <div class="design-grid">
+                        <a href="temp_awesome_design/design-md/cursor/README.md" class="design-card fade-in">
+                            <h4>Cursor</h4>
+                            <p>AI 优先的代码编辑器。流畅暗色界面，渐变强调色</p>
+                        </a>
+                        <a href="temp_awesome_design/design-md/vercel/README.md" class="design-card fade-in delay-1">
+                            <h4>Vercel</h4>
+                            <p>前端部署平台。黑白精准，Geist 字体</p>
+                        </a>
+                        <a href="temp_awesome_design/design-md/lovable/README.md" class="design-card fade-in delay-2">
+                            <h4>Lovable</h4>
+                            <p>AI 全栈构建器。生动渐变，友好的开发者美学</p>
+                        </a>
+                        <a href="temp_awesome_design/design-md/warp/README.md" class="design-card fade-in">
+                            <h4>Warp</h4>
+                            <p>现代终端。暗色 IDE 风格界面，块式命令 UI</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>更多资源</h2>
+                        <div class="line"></div>
+                        <p class="section-desc">查看完整集合：<a href="temp_awesome_design/README.md" target="_blank">Awesome DESIGN.md</a></p>
+                    </div>
+                    <div class="design-categories">
+                        <div class="category-item">
+                            <h4>🗄️ 后端 & 数据库</h4>
+                            <p>ClickHouse, Supabase, MongoDB 等</p>
+                        </div>
+                        <div class="category-item">
+                            <h4>💼 生产力 & SaaS</h4>
+                            <p>Notion, Linear, Zapier 等</p>
+                        </div>
+                        <div class="category-item">
+                            <h4>🎨 设计工具</h4>
+                            <p>Figma, Webflow, Framer 等</p>
+                        </div>
+                        <div class="category-item">
+                            <h4>💰 金融科技</h4>
+                            <p>Stripe, Coinbase, Wise 等</p>
+                        </div>
+                        <div class="category-item">
+                            <h4">🚗 汽车</h4>
+                            <p>Tesla, BMW, Lamborghini 等</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <button class="scroll-to-top" aria-label="回到顶部">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </button>
+
+        <footer>
+            <div class="container">
+                <p>&copy; 2022-2026 OpenLight Studio. All Rights Reserved.</p>
+                <p class="footer-links">
+                    <a href="https://github.com/OpenLight-Studio" target="_blank">GitHub</a>
+                    <span class="separator">·</span>
+                    <a href="https://ifdian.net/a/OpenLight" target="_blank" class="btn btn-afdian">爱发电</a>
+                </p>
+                <p class="footer-note">Designed with Light & Code.</p>
+            </div>
+        </footer>
+
+        <script src="../script.js"></script>
+    </body>
+</html>

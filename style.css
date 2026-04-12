@@ -20,33 +20,34 @@
 
 /* ===== CSS VARIABLES ===== */
 :root {
-    --bg-color: #0a0a0f;
-    --bg-secondary: #12121a;
-    --bg-card: rgba(255, 255, 255, 0.03);
-    --text-main: #a0a0b0;
-    --text-highlight: #00d4ff;
-    --text-accent: #7c3aed;
-    --text-white: #ffffff;
-    --accent-glow: rgba(0, 212, 255, 0.2);
-    --accent-purple: rgba(124, 58, 237, 0.3);
-    --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
-    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
-    --gradient-mesh: radial-gradient(at 40% 20%, rgba(0, 212, 255, 0.08) 0%, transparent 50%),
-                      radial-gradient(at 80% 0%, rgba(124, 58, 237, 0.06) 0%, transparent 50%),
-                      radial-gradient(at 0% 50%, rgba(0, 212, 255, 0.04) 0%, transparent 50%),
-                      radial-gradient(at 80% 100%, rgba(124, 58, 237, 0.08) 0%, transparent 50%);
-    --font-main: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+    --bg-color: #f5f4ed; /* Parchment - Claude's warm background */
+    --bg-secondary: #faf9f5; /* Ivory - card surface */
+    --bg-card: #faf9f5; /* Ivory for light theme cards */
+    --text-main: #5e5d59; /* Olive Gray - secondary text */
+    --text-highlight: #c96442; /* Terracotta Brand - primary accent */
+    --text-accent: #c96442; /* Terracotta Brand */
+    --text-white: #141413; /* Anthropic Near Black - primary text */
+    --accent-glow: rgba(201, 100, 66, 0.1); /* Terracotta glow */
+    --accent-purple: rgba(201, 100, 66, 0.15); /* Terracotta accent */
+    --gradient-primary: linear-gradient(135deg, #c96442 0%, #a0553a 100%); /* Terracotta gradient */
+    --gradient-card: linear-gradient(145deg, #faf9f5 0%, #f5f4ed 100%); /* Warm card gradient */
+    --gradient-mesh: radial-gradient(at 40% 20%, rgba(201, 100, 66, 0.04) 0%, transparent 50%),
+                      radial-gradient(at 80% 0%, rgba(201, 100, 66, 0.03) 0%, transparent 50%),
+                      radial-gradient(at 0% 50%, rgba(201, 100, 66, 0.02) 0%, transparent 50%),
+                      radial-gradient(at 80% 100%, rgba(201, 100, 66, 0.04) 0%, transparent 50%);
+    --font-main: "Crimson Text", "Times New Roman", serif; /* Anthropic Serif-inspired */
+    --font-sans: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
     --font-code: "JetBrains Mono", monospace;
     --ease: cubic-bezier(0.25, 0.8, 0.25, 1);
     --transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
     --transition-fast: opacity 0.2s var(--ease), transform 0.2s var(--ease);
-    --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15);
-    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --shadow-elevated: 0 20px 60px rgba(0, 0, 0, 0.4);
-    --border-color: rgba(255, 255, 255, 0.06);
-    --nav-bg: rgba(10, 10, 15, 0.7);
-    --nav-scrolled-bg: rgba(10, 10, 15, 0.95);
-    --card-bg: rgba(31, 41, 55, 0.5);
+    --shadow-glow: 0 0 40px rgba(201, 100, 66, 0.08);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --shadow-elevated: 0 20px 60px rgba(0, 0, 0, 0.12);
+    --border-color: rgba(77, 76, 72, 0.15); /* Ring shadow instead of border */
+    --nav-bg: rgba(245, 244, 237, 0.95); /* Semi-transparent parchment */
+    --nav-scrolled-bg: rgba(250, 249, 245, 0.98); /* Ivory with slight transparency */
+    --card-bg: #faf9f5; /* Ivory */
     --radius-sm: 8px;
     --radius-md: 12px;
     --radius-lg: 20px;
@@ -56,44 +57,44 @@
 /* ===== LIGHT THEME ===== */
 :root.light-theme,
 .light-theme {
-    --bg-color: #f5f7fa;
-    --bg-secondary: #ffffff;
-    --bg-card: rgba(255, 255, 255, 0.95);
-    --text-main: #374151;
-    --text-highlight: #0e7490;
-    --text-accent: #6d28d9;
-    --text-white: #111827;
-    --accent-glow: rgba(14, 116, 144, 0.12);
-    --accent-purple: rgba(109, 40, 217, 0.15);
-    --gradient-primary: linear-gradient(135deg, #0e7490 0%, #6d28d9 100%);
-    --gradient-card: linear-gradient(145deg, #ffffff 0%, #f3f4f6 100%);
-    --shadow-glow: 0 0 30px rgba(14, 116, 144, 0.12);
+    --bg-color: #f5f4ed; /* Parchment */
+    --bg-secondary: #faf9f5; /* Ivory */
+    --bg-card: #faf9f5; /* Ivory */
+    --text-main: #5e5d59; /* Olive Gray */
+    --text-highlight: #c96442; /* Terracotta Brand */
+    --text-accent: #c96442; /* Terracotta Brand */
+    --text-white: #141413; /* Anthropic Near Black */
+    --accent-glow: rgba(201, 100, 66, 0.1);
+    --accent-purple: rgba(201, 100, 66, 0.15);
+    --gradient-primary: linear-gradient(135deg, #c96442 0%, #a0553a 100%);
+    --gradient-card: linear-gradient(145deg, #faf9f5 0%, #f5f4ed 100%);
+    --shadow-glow: 0 0 30px rgba(201, 100, 66, 0.08);
     --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.06);
-    --border-color: rgba(0, 0, 0, 0.08);
-    --nav-bg: rgba(255, 255, 255, 0.85);
-    --nav-scrolled-bg: rgba(255, 255, 255, 0.98);
-    --card-bg: #ffffff;
+    --border-color: rgba(77, 76, 72, 0.15);
+    --nav-bg: rgba(245, 244, 237, 0.95);
+    --nav-scrolled-bg: rgba(250, 249, 245, 0.98);
+    --card-bg: #faf9f5;
 }
 
 /* ===== DARK THEME ===== */
 .dark-theme {
-    --bg-color: #0a0a0f;
-    --bg-secondary: #12121a;
-    --bg-card: rgba(255, 255, 255, 0.03);
-    --text-main: #a0a0b0;
-    --text-highlight: #00d4ff;
-    --text-accent: #7c3aed;
-    --text-white: #ffffff;
-    --accent-glow: rgba(0, 212, 255, 0.2);
-    --accent-purple: rgba(124, 58, 237, 0.3);
-    --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
-    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
-    --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15);
+    --bg-color: #141413; /* Anthropic Near Black */
+    --bg-secondary: #30302e; /* Dark Warm */
+    --bg-card: #30302e; /* Dark Warm for cards */
+    --text-main: #87867f; /* Warm Gray */
+    --text-highlight: #c96442; /* Terracotta Brand */
+    --text-accent: #c96442; /* Terracotta Brand */
+    --text-white: #faf9f5; /* Ivory text on dark */
+    --accent-glow: rgba(201, 100, 66, 0.2);
+    --accent-purple: rgba(201, 100, 66, 0.3);
+    --gradient-primary: linear-gradient(135deg, #c96442 0%, #a0553a 100%);
+    --gradient-card: linear-gradient(145deg, #30302e 0%, #4d4c48 100%);
+    --shadow-glow: 0 0 40px rgba(201, 100, 66, 0.15);
     --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --border-color: rgba(255, 255, 255, 0.06);
-    --nav-bg: rgba(10, 10, 15, 0.7);
-    --nav-scrolled-bg: rgba(10, 10, 15, 0.95);
-    --card-bg: rgba(31, 41, 55, 0.5);
+    --border-color: rgba(135, 134, 127, 0.15);
+    --nav-bg: rgba(20, 20, 19, 0.9); /* Near Black with transparency */
+    --nav-scrolled-bg: rgba(48, 48, 46, 0.95); /* Dark Warm */
+    --card-bg: #30302e;
 }
 
 /* ===== GLOBAL RESET ===== */
@@ -111,11 +112,11 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     font-family: var(--font-main);
-    line-height: 1.7;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
-/* ===== GRID BACKGROUND ===== */
+/* ===== SUBTLE TEXTURE BACKGROUND ===== */
 body::before {
     content: '';
     position: fixed;
@@ -125,16 +126,8 @@ body::before {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-    background-image: 
-        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 20%, transparent 70%);
-}
-
-.light-theme body::after {
-    opacity: 0.03;
+    background-image: radial-gradient(circle at 50% 50%, rgba(201, 100, 66, 0.02) 0%, transparent 50%);
+    opacity: 0.5;
 }
 
 /* ===== HARDWARE ACCELERATION ===== */
@@ -163,13 +156,13 @@ body::before {
     padding: 1rem 0;
     background: var(--nav-bg);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0px 0px 0px 1px var(--border-color); /* Ring shadow instead of border */
     transition: var(--transition);
 }
 
 .navbar.scrolled {
     background: var(--nav-scrolled-bg);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 0px 0px 1px var(--border-color), 0 4px 30px rgba(0, 0, 0, 0.08);
     padding: 12px 0;
 }
 
@@ -200,7 +193,7 @@ body::before {
 
 .logo {
     font-size: 1.6rem;
-    font-weight: 800;
+    font-weight: 600; /* Less bold for serif */
     color: var(--text-white);
     letter-spacing: -0.5px;
     display: flex;
@@ -208,6 +201,7 @@ body::before {
     gap: 4px;
     position: relative;
     text-decoration: none;
+    font-family: var(--font-main);
 }
 
 .logo::before {
@@ -247,9 +241,10 @@ body::before {
 .nav-links a {
     color: var(--text-main);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400; /* Normal weight */
     transition: var(--transition);
     position: relative;
+    font-family: var(--font-sans); /* Sans for UI elements */
 }
 
 .nav-links a:hover,
@@ -265,7 +260,7 @@ body::before {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: var(--gradient-primary);
+    background: var(--text-highlight); /* Terracotta */
     transition: width 0.3s ease;
 }
 
@@ -314,10 +309,10 @@ body::before {
 }
 
 .btn-primary {
-    background: var(--gradient-primary);
-    color: var(--bg-color);
+    background: var(--text-highlight); /* Terracotta */
+    color: #faf9f5; /* Ivory text */
     border: none;
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0px 0px 0px 1px var(--text-highlight); /* Ring shadow */
 }
 
 .btn-primary::before {
@@ -337,8 +332,8 @@ body::before {
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.45), 0 0 20px rgba(0, 212, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0px 0px 0px 2px var(--text-highlight), 0 4px 20px rgba(201, 100, 66, 0.25);
 }
 
 .btn-primary:active {
@@ -1562,4 +1557,94 @@ body::before {
         transform: scale(4);
         opacity: 0;
     }
+}
+
+/* ===== DESIGN RESOURCES ===== */
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.design-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.design-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+    border-color: var(--text-highlight);
+}
+
+.design-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.design-card:hover::before {
+    opacity: 1;
+}
+
+.design-card h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.design-card p {
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.design-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.category-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.category-item:hover {
+    border-color: var(--text-highlight);
+    box-shadow: var(--shadow-card);
+}
+
+.category-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.category-item p {
+    color: var(--text-main);
+    margin: 0;
+    font-size: 0.9rem;
 }
