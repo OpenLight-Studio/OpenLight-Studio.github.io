@@ -12,20 +12,23 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
-  color: #333;
-  background: #f5f5f5;
+  color: var(--dark);
+  background: var(--light);
   overflow-x: hidden;
 }
 
 /* ===== VARIABLES ===== */
 :root {
-  --primary: #c96442;
-  --secondary: #2c3e50;
-  --light: #ecf0f1;
-  --dark: #34495e;
+  --primary: #c96442; /* Terracotta accent */
+  --secondary: #5e5d59; /* Olive Gray for secondary text */
+  --light: #faf9f5; /* Ivory for light surfaces */
+  --dark: #141413; /* Near Black for dark text */
   --shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --font-heading: "Crimson Text", "Times New Roman", serif; /* Anthropic Serif-inspired for headings */
+  --font-body: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif; /* Sans for body text */
+  --font-code: "JetBrains Mono", monospace;
 }
 
 /* ===== NAVIGATION ===== */
@@ -33,7 +36,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255,255,255,0.95);
+  background: rgba(245, 244, 237, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: all 0.3s;
@@ -57,6 +60,7 @@ body {
   font-weight: bold;
   color: var(--primary);
   text-decoration: none;
+  font-family: var(--font-heading);
 }
 
 .nav-links {
@@ -142,6 +146,7 @@ body {
   font-size: 3rem;
   margin-bottom: 1rem;
   animation: fadeInUp 1s ease-out;
+  font-family: var(--font-heading);
 }
 
 .hero p {
@@ -211,6 +216,7 @@ body {
   font-size: 2.5rem;
   color: var(--secondary);
   margin-bottom: 1rem;
+  font-family: var(--font-heading);
 }
 
 .section-header .line {
