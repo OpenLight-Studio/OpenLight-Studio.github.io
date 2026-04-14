@@ -58,7 +58,14 @@ body {
   --secondary: #5e5d59; /* Olive Gray for secondary text */
   --light: #faf9f5; /* Ivory for light surfaces */
   --dark: #141413; /* Near Black for dark text */
-  --shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+  --shadow-xl: 0 16px 50px rgba(0,0,0,0.15);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
   --font-heading: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
   --font-body: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
   --font-code: "JetBrains Mono", monospace;
@@ -81,7 +88,14 @@ body {
   --secondary: #5e5d59;
   --light: #faf9f5;
   --dark: #141413;
-  --shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+  --shadow-xl: 0 16px 50px rgba(0,0,0,0.15);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
   --font-heading: "Crimson Text", "Times New Roman", serif;
   --font-body: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
   --font-code: "JetBrains Mono", monospace;
@@ -92,14 +106,17 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(245, 244, 237, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(245, 244, 237, 0.85);
+  backdrop-filter: blur(20px) saturate(120%);
   z-index: 1000;
-  transition: all 0.3s;
+  transition: all 0.4s var(--ease-out);
+  border-bottom: 1px solid transparent;
 }
 
 .navbar.scrolled {
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(0,0,0,0.05);
+  background: rgba(250, 249, 245, 0.9);
 }
 
 .nav-content {
@@ -220,14 +237,17 @@ body {
 
 /* ===== BUTTONS ===== */
 .btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.875rem 1.75rem;
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius-md);
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.25s var(--ease-bounce);
   text-decoration: none;
   display: inline-block;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary {
@@ -291,18 +311,37 @@ body {
 
 .preview-card {
   background: white;
-  padding: 2rem;
-  border-radius: 10px;
+  padding: 2.25rem;
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.35s var(--ease-out);
   text-decoration: none;
   color: inherit;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.preview-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--primary) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
 }
 
 .preview-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(201, 100, 66, 0.15);
+}
+
+.preview-card:hover::before {
+  opacity: 0.03;
 }
 
 .preview-icon {
@@ -340,12 +379,32 @@ footer {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s var(--ease-out);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero h1 {
+  animation: fadeInUp 1s var(--ease-out), float 6s ease-in-out infinite 1.5s;
 }
 
 .fade-in {
