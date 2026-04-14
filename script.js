@@ -173,14 +173,22 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
   });
 
-  // === 导航栏滚动效果 ===
+  // === 导航栏滚动效果 + 滚动进度条 ===
   const navbar = document.querySelector(".navbar");
-  if (navbar) {
+  const scrollProgress = document.querySelector(".scroll-progress");
+  if (navbar || scrollProgress) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
+      if (navbar) {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      }
+      
+      if (scrollProgress) {
+        const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
       }
     });
   }
