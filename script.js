@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+    let animationId;
     function animate() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       particles.forEach((p) => {
@@ -90,8 +91,13 @@ document.addEventListener("DOMContentLoaded", () => {
         p.draw();
       });
       connectParticles();
-      requestAnimationFrame(animate);
+      animationId = requestAnimationFrame(animate);
     }
+    
+    // Cleanup animation on page unload
+    window.addEventListener('beforeunload', () => {
+      cancelAnimationFrame(animationId);
+    });
 
     initParticles();
     animate();

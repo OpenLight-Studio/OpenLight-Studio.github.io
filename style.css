@@ -1,5 +1,38 @@
 /* OpenLight Studio - Clean Minimal CSS */
 
+/* ===== FONT FACES ===== */
+@font-face {
+  font-family: 'Nunito';
+  src: url('./assets/fonts/nunito/Nunito/Nunito-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./assets/fonts/nunito/Nunito/Nunito-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MiSans';
+  src: url('./assets/fonts/MiSans/MiSans/woff2/MiSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MiSans';
+  src: url('./assets/fonts/MiSans/MiSans/woff2/MiSans-Demibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ===== RESET ===== */
 * {
   margin: 0;
@@ -20,14 +53,37 @@ body {
 }
 
 /* ===== VARIABLES ===== */
-:root {
+:root.light-theme {
   --primary: #c96442; /* Terracotta accent */
   --secondary: #5e5d59; /* Olive Gray for secondary text */
   --light: #faf9f5; /* Ivory for light surfaces */
   --dark: #141413; /* Near Black for dark text */
   --shadow: 0 2px 10px rgba(0,0,0,0.1);
-  --font-heading: "Crimson Text", "Times New Roman", serif; /* Anthropic Serif-inspired for headings */
-  --font-body: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif; /* Sans for body text */
+  --font-heading: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  --font-body: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+}
+
+:root.dark-theme {
+  --primary: #e07550; /* Lighter terracotta for dark mode */
+  --secondary: #9a9993; /* Light gray for secondary text */
+  --light: #141413; /* Dark background */
+  --dark: #faf9f5; /* Light text */
+  --shadow: 0 2px 10px rgba(0,0,0,0.3);
+  --font-heading: "Crimson Text", "Times New Roman", serif;
+  --font-body: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+}
+
+/* Default to light theme for browsers not supporting :root classes */
+:root {
+  --primary: #c96442;
+  --secondary: #5e5d59;
+  --light: #faf9f5;
+  --dark: #141413;
+  --shadow: 0 2px 10px rgba(0,0,0,0.1);
+  --font-heading: "Crimson Text", "Times New Roman", serif;
+  --font-body: "Nunito", "MiSans", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
   --font-code: "JetBrains Mono", monospace;
 }
 
@@ -57,7 +113,7 @@ body {
 
 .logo {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--primary);
   text-decoration: none;
   font-family: var(--font-heading);
@@ -180,7 +236,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: darken(var(--primary), 10%);
+  background: color-mix(in srgb, var(--primary) 90%, black);
   transform: translateY(-2px);
   box-shadow: var(--shadow);
 }
